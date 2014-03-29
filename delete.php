@@ -17,7 +17,7 @@ if (!$link)
 		
 	}
 	else{
-		pg_query($link,'DELETE FROM TeeShirts WHERE color='$color'') or die('Error: ' . pg_last_error());
+		pg_query($link,"DELETE FROM TeeShirts WHERE color='$color'") or die('Error: ' . pg_last_error());
 		echo "Teeshirt has been deleted!";
 		header('Location: index.php');
 	}
