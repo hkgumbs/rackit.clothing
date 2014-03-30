@@ -3,6 +3,7 @@ include_once ("login.html");
 
 include "includes/connection.php";
 
+/*
 $query = "SELECT * FROM users_db";
 
 $result = pg_query($query);
@@ -39,6 +40,6 @@ while ($row = pg_fetch_row($result))
 	echo '</tr>';
 	$i = $i + 1;
 }
-pg_free_result($result);
+pg_free_result($result);*/
 
 ?>

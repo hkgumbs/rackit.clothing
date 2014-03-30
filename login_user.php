@@ -1,24 +1,45 @@
 <?php
 
-
 include "includes/connection.php";
 
-$email = $_POST['input_email'];
+$email = strtolower($_POST['input_email']);
+echo $email;
 /* $user_name = $_POST['input_name_first']; */
-$password = md5($_POST['input_password']);
+$password = trim(md5($_POST['input_password']));
+echo $password . "<br/>";
 
-/**** CHECK FOR PASSWORD LENGTH ***/
+
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
-	header('Location: create_user.php');
-} else if ($password != $password_confirm) {
-	echo "passwords don't match";
-	header('Location: create_user.php');
-} else {
-	pg_query("INSERT INTO users_db (email, password, address_street, address_city, address_state, address_zip_code)
-					   VALUES('$email','$password', '$street_address', '$city', '$state', '$zip')") or die('Error: ' . pg_last_error());
-	echo "User has been added!";
 	header('Location: login.php');
+} else {
+
+	$result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
+	$myuser = pg_fetch_assoc($result);
+
+	if (!$result) {
+		echo '<td>' . pg_fetch_row($result) . '</td>';
+		echo "E-mail not found" . $query . "<br/>";
+		/*header('Location: login.php');*/
+	} else if ($password != trim($myuser['password'])) {
+		echo $myuser['password'];
+		echo "Incorrect Password" . $query . "<br/>";
+		echo '<td>' . pg_fetch_row($result) . '</td>';
+		/*header('Location: login.php');*/
+	} else {
+		/* go to listings page */
+		/*header('Location: index.php');*/
+
+		echo "All GOOD!!" . $query . "<br/>";
+	}
+
 }
+
+
+
 ?>
 
+<!--
+	
+
+-->
