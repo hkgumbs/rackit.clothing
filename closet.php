@@ -34,7 +34,6 @@ while ($row = pg_fetch_assoc($result)) {
 
 echo '</div> ';
 
-header('Location: closet.php');
 
 
 ?>
