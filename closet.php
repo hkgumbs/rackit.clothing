@@ -22,9 +22,17 @@ while ($row = mysql_fetch_array($result)) {
 	$result .= '<div class="thumb_container">';
 	$result .= '<img class="thumb" src="' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$result .= "<div>";
-	$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row[age_low] . '-' . $row[age_high] . ']</p>';
+	if ($row[age_high]) {
+		$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row[age_low] . '-' . $row[age_high] . ']</p>';
+	} else {
+		$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row[age_low] . ']</p>';
+	}
 	$result .= "</a>";
 	$result .= " ";
+	<html>
+	<div class="item_grid" id="mydiv"><?php echo $result; ?></div> 
+	
+	</html>
 }
 
 $result .= '<a class="item" href="listing.html">';
@@ -34,8 +42,8 @@ $result .= '</div>';
 $result .= '<p class="item_description">[gender][age]</p>';
 $result .= '</a>';
 $result .= " ";
-
 ?>
 
-<div id="mydiv"><?php echo $result; ?></div> 
+
+<div class="item_grid" id="mydiv"><?php echo $result; ?></div> 
 
