@@ -14,7 +14,7 @@ if (!$_POST['submit']) {
 
 	$result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
 
-	print "HELLLOO??";
+	echo '<html><br /><br /><br /><br /><br /><br /><body><table><tr>';
 	echo '<td>' . $result . '</td>';
 	
 	if (!$result) {
