@@ -31,17 +31,19 @@ while ($row = mysql_fetch_array($result)) {
 	$result .= " ";
 }
 
-$result .= '<div class="item_grid" id="mydiv">';
+echo'<div class="item_grid" id="mydiv">';
+
+
 $result .= '<a class="item" href="listing.html">';
 $result .= '<div class="thumb_container">';
 $result .= '<img class="thumb" src="style/photo_default.png" alt="image could not be loaded :(">';
 $result .= '</div>';
 $result .= '<p class="item_description">[gender][age]</p>';
 $result .= '</a>';
-$result .= '</div>';
-$result .= " ";
 
 echo $result;
+echo '</div>' . " ";
+
 
 ?>
 
