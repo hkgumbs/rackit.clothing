@@ -16,8 +16,6 @@ if (!$result) {
 
 echo '<div class="item_grid" id="mydiv">';
 
-$result = pg_query("DELETE * FROM bundles");
-
 while ($row = pg_fetch_assoc($result)) {
 	
 	
