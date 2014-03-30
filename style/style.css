@@ -13,7 +13,7 @@ body, input, select, button {
 	font-family: 'Roboto Slab', serif;	
 }
 
-p {
+p, label {
 	font-size: 24px;
 	font-weight: 200;
 	text-align: center;
@@ -33,7 +33,7 @@ a:link, a:visited, a:hover, a:active {
 	text-decoration:none;
 }
 
-a.button, #login, #signup {
+a.button, #login, #signup, #search {
 	text-transform: uppercase;
 	border: #ffffff solid thick;
 	border-radius: 18px;
@@ -50,7 +50,7 @@ a.button {
 	line-height: 72px;
 }
 
-input#login, input#signup {
+input#login, input#signup, input#search {
 	margin: 5px auto;
 	float: center;
 	width: 445px;
@@ -62,7 +62,7 @@ input#login, input#signup {
 	text-align: center;
 }
 
-#login, #rackit {
+#login, #rackit, #search {
 	background-color: #E49407;
 }
 
@@ -178,13 +178,23 @@ textarea, input {
 	width: 24%;
 }
 
-.radio_container {
-	display: block;
+.radio_male_container {
+	text-align: center;
+	width: 50%;
+	float: left;
 }
 
-.input_gender {
+.radio_female_container {
+	text-align: center;
+	width: 50%;
 	float: left;
-	clear: both;
+}
+
+#input_gender_male, #input_gender_female {
+	margin: 0;
+	padding: 0;
+	width: 20px;
+	height: 18px;
 }
 
 /*************************
