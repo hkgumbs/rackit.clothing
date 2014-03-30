@@ -6,8 +6,11 @@ $email = strtolower($_POST['input_email']);
 echo $email;
 /* $user_name = $_POST['input_name_first']; */
 $password = md5($_POST['input_password']);
-echo $_POST['input_password'];
-/**** CHECK FOR PASSWORD LENGTH ***/
+echo $_POST['input_password']; "<br/>";
+
+
+$result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
+echo pg_fetch_row($result);
 
 ?>
 
