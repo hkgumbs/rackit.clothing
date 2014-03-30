@@ -14,7 +14,7 @@ if (!$result) {
 	exit();
 }
 
-/*
+
 echo '<div class="item_grid" id="mydiv">';
 
 while ($row = pg_fetch_assoc($result)) {
@@ -26,6 +26,8 @@ while ($row = pg_fetch_assoc($result)) {
 	$result .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$result .= "<div>";
 	$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row['age_rang'] . ']</p>';
+	$result .= "</div>";
+	$result .= "</div>";
 	$result .= "</a>";
 	$result .= " ";
 	
@@ -33,7 +35,7 @@ while ($row = pg_fetch_assoc($result)) {
 }
 
 echo '</div> ';
-*/
+
 
 
 ?>
