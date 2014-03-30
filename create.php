@@ -8,7 +8,7 @@
 
 	if(!$_POST['submit']) {
 		echo "please fill out the form";
-		header('Location: index.php');
+		header('Location: login.php');
 		
 	}
 	else{
