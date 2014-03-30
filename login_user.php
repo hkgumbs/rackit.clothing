@@ -12,6 +12,26 @@ echo $_POST['input_password']; "<br/>";
 $result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
 echo pg_fetch_row($result);
 
+$i = 0;
+
+while ($row = pg_fetch_row($result)) 
+{
+	echo '<tr>';
+	$count = count($row);
+	$y = 0;
+	while ($y < $count)
+	{
+		$c_row = current($row);
+		echo '<td>' . $c_row . '</td>';
+		next($row);
+		$y = $y + 1;
+	}
+	echo '</tr>';
+	$i = $i + 1;
+}
+pg_free_result($result);
+
+
 ?>
 
 <!--
