@@ -24,7 +24,7 @@ if ($selected_radio == 'male') {
 					   VALUES('$female')") or die('Error: ' . pg_last_error());
 
 }
-pg_query("INSERT INTO bundles (age_range)
+pg_query("INSERT INTO bundles (age_rang)
 					   VALUES('$age')") or die('Error: ' . pg_last_error());
 
 pg_query("INSERT INTO bundles (image_id))
