@@ -22,6 +22,7 @@ if (!$_POST['submit']) {
 		echo "E-mail not found" . $query . "<br/>";
 		/*header('Location: login.php');*/
 	} else if ($password != $myuser['password']) {
+		echo $myuser['password'];
 		echo "Incorrect Password" . $query . "<br/>";
 		echo '<td>' . pg_fetch_row($result) . '</td>';
 		/*header('Location: login.php');*/
