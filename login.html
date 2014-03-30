@@ -15,8 +15,8 @@
 		
 		
 		<script>
-			$("a.login").click(function(){
-				$("a.button_submit").submit();
+			$("a#login").click(function(){
+				$("a#button_submit").submit();
 				alert("Hello worklsdkfasd");
 				return false;
 			});
@@ -41,9 +41,9 @@
 					</input>
 
 					<div class="button_container">
-						<input type="submit" class="button_submit" name="button_submit">
+						<input type="submit" class="button_submit" id="button_submit" name="button_submit">
 						</input>
-						<a class="login" href="#">Log in</a>
+						<a class="login" id="login" href="#">Log in</a>
 					</div>
 				</form>
 			</div>
