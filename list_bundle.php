@@ -32,4 +32,6 @@ pg_query("INSERT INTO bundles (image_id))
 
 file_put_contents('./bundle_images', $image);
 
+header('Location: closet.php');
+
 ?>
