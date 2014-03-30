@@ -40,6 +40,7 @@ while ($row = pg_fetch_row($result))
 	$i = $i + 1;
 }
 pg_free_result($result);
+
 ?>
 
 <h1>List a Teeshirt</h1>
