@@ -42,6 +42,25 @@ $result .= '<p class="item_description">[gender][age]</p>';
 $result .= '</a>';
 
 echo $result;
+
+$result .= '<a class="item" href="listing.html">';
+$result .= '<div class="thumb_container">';
+$result .= '<img class="thumb" src="style/photo_default.png" alt="image could not be loaded :(">';
+$result .= '</div>';
+$result .= '<p class="item_description">[gender][age]</p>';
+$result .= '</a>';
+
+echo $result;
+
+
+$result .= '<a class="item" href="listing.html">';
+$result .= '<div class="thumb_container">';
+$result .= '<img class="thumb" src="style/photo_default.png" alt="image could not be loaded :(">';
+$result .= '</div>';
+$result .= '<p class="item_description">[gender][age]</p>';
+$result .= '</a>';
+
+echo $result;
 echo '</div>' . " ";
 
 
