@@ -12,7 +12,7 @@
 		
 	}
 	else{
-		pg_query("INSERT INTO users_db (`email`, `name_last`, `name_first`)
+		pg_query("INSERT INTO users_db (email, name_last, name_first)
 					   VALUES('$email','$name_last','$name_last')") or die('Error: ' . pg_last_error());
 		echo "Teeshirt has been added!";
 		header('Location: index.php');
