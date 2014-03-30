@@ -1,10 +1,10 @@
-<?php //include_once("home.html");
+<?php 
 
     include "includes/connection.php";
 
     $email = $_POST['input_email'];
 	 /* $user_name = $_POST['input_name_first']; */
-	$password = md5($_POST['password']);
+	$password = md5($_POST['input_password']);
 
 	if(!$_POST['submit']) {
 		echo "please fill out the form";
