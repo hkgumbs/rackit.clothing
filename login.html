@@ -12,15 +12,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link rel="stylesheet" href="style/style.css" type="text/css" />
-		
-		
-		<script>
-			$("a#login").click(function(){
-				$("a#button_submit").submit();
-				alert("Hello worklsdkfasd");
-				return false;
-			});
-		</script>
+
 	</head>
 
 	<body>
@@ -35,15 +27,12 @@
 		<div class="modal">
 			<div class= "modal_container">
 				<form action = "create.php" method = "post">
-					<input class="input_email" name="input_email" type="email" placeholder="email address">
-					</input>
-					<input class="input_password" name="input_password" type="password" placeholder="password">
-					</input>
+					<input class="input_email" name="input_email" type="email" placeholder="email address" />
+					<input class="input_password" name="input_password" type="password" placeholder="password" />
 
 					<div class="button_container">
-						<input type="submit" class="button_submit" id="button_submit" name="button_submit">
-						</input>
-						<a class="login" id="login" href="#">Log in</a>
+						<input type="submit" class="login" name="submit"/>
+
 					</div>
 				</form>
 			</div>
