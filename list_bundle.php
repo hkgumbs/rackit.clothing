@@ -29,6 +29,7 @@ pg_query("INSERT INTO bundles (age_range))
 
 pg_query("INSERT INTO bundles (image_id))
 					   VALUES('$file_name',)") or die('Error: ' . pg_last_error());
-					
-					file_put_contents('./myDir/myFile.gif', $image);
+
+file_put_contents('./bundle_images', $image);
+
 ?>
