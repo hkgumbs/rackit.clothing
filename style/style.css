@@ -33,6 +33,16 @@ a:link, a:visited, a:hover, a:active {
 	text-decoration:none;
 }
 
+a.title:link, a.title:visited, a.title:hover, a.title:active {
+	color: #000000;
+	text-decoration:none;
+}
+
+.title a{
+	color: #000000;
+	text-decoration:none;
+}
+
 a.button, #login, #signup, #search, #list {
 	text-transform: uppercase;
 	border: #ffffff solid thick;
