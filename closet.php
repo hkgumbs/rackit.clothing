@@ -16,23 +16,23 @@ if (!$result) {
 
 echo '<div class="item_grid" id="mydiv">';
 
-$result = '';
+$to_echo = '';
 
 while ($row = pg_fetch_assoc($result)) {
 
-	$result .= '<a class="item" href="listing.html">';
-	$result .= '<div class="thumb_container">';
-	$result .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
-	$result .= "<div>";
-	$result .= '<p class="item_description">' . $row['gender'] . ', ' . $row['age_rang'] . '</p>';
-	$result .= "</div>";
-	$result .= "</div>";
-	$result .= "</a>";
-	$result .= " ";
+	$to_echo .= '<a class="item" href="listing.html">';
+	$to_echo .= '<div class="thumb_container">';
+	$to_echo .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
+	$to_echo .= "<div>";
+	$to_echo .= '<p class="item_description">' . $row['gender'] . ', ' . $row['age_rang'] . '</p>';
+	$to_echo .= "</div>";
+	$to_echo .= "</div>";
+	$to_echo .= "</a>";
+	$to_echo .= " ";
 
 	
 }
-echo $result;
+echo $to_echo;
 	
 echo '</div> ';
 
