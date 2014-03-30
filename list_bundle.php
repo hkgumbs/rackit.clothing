@@ -6,8 +6,6 @@ include "includes/connection.php";
 $selected_radio = $_POST['gender'];
 $age = $_POST['input_age'];
 $file_name = md5($_POST['file']);
-$male = "M";
-$female = "F";
 
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
@@ -16,19 +14,17 @@ if (!$_POST['submit']) {
 
 if ($selected_radio == 'male') {
 
-	pg_query("INSERT INTO bundles (gender)
-					   VALUES('$male')") or die('Error: ' . pg_last_error());
+$gender = "M";
+	
 } else if ($selected_radio == 'female') {
 
-	pg_query("INSERT INTO bundles (gender)
-					   VALUES('$female')") or die('Error: ' . pg_last_error());
+$gender = "F";
 
 }
-pg_query("INSERT INTO bundles (age_rang)
-					   VALUES('$age')") or die('Error: ' . pg_last_error());
 
-pg_query("INSERT INTO bundles (image_id)
-					   VALUES('$file_name')") or die('Error: ' . pg_last_error());
+
+pg_query("INSERT INTO bundles (gender,age_rang,image_id)
+					   VALUES('$gender','$age','$file_name')") or die('Error: ' . pg_last_error());
 
 
 if ($_FILES["file"]["error"] > 0)
