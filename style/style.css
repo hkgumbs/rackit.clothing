@@ -15,8 +15,12 @@ body, input, select, button {
 
 p {
 	font-size: 24px;
-	text-align: justify;
 	font-weight: 200;
+	text-align: center;
+}
+
+p.blurb {
+	text-align: justify;
 }
 
 
@@ -29,7 +33,7 @@ a:link, a:visited, a:hover, a:active {
 	text-decoration:none;
 }
 
-a, .login, .signup {
+a.button, #login, #signup {
 	text-transform: uppercase;
 	border: #ffffff solid thick;
 	border-radius: 18px;
@@ -40,13 +44,13 @@ a, .login, .signup {
 	cursor:pointer;
 }
 
-a {
+a.button {
 	margin: 5px;
 	width: 90%;
 	line-height: 72px;
 }
 
-input.login, input.signup {
+input#login, input#signup {
 	margin: 5px auto;
 	float: center;
 	width: 445px;
@@ -58,18 +62,14 @@ input.login, input.signup {
 	text-align: center;
 }
 
-.login, .rackit {
+#login, #rackit {
 	background-color: #E49407;
 }
 
-{
-	margin-top: 1960px;
+#signup {
 	background-color: #0FBA8E;
 }
 
-#submit_hidden {
-	display: none;
-}
 
 /*************************
 		HEADERS
@@ -178,6 +178,15 @@ textarea, input {
 	width: 24%;
 }
 
+.radio_container {
+	display: block;
+}
+
+.input_gender {
+	float: left;
+	clear: both;
+}
+
 /*************************
 		MODAL
 *************************/
@@ -208,6 +217,56 @@ img.full {
 	border-radius: 18px;
 }
 
-.image_container {
+img.thumb {
+	height: 256px;
+	width: 256px;
+    overflow: hidden;
+    border: #ffffff solid thick;
+	border-radius: 18px;
+}
+
+.full_container, .thumb_container {
 	text-align: center;
 }
+
+.thumb_container {
+	margin: 0 10px;
+	display: block;
+}
+
+
+/*************************
+		CLOSET
+*************************/
+
+a.item {
+	float: left;
+}
+
+.item_description {
+	margin-top: 0;
+}
+
+.item_grid {
+	text-align: center;
+	overflow: hidden;
+	margin: 96px auto;
+	width: 858px;
+}
+
+
+/*************************
+		MEDIA QUERIES
+*************************/
+@media only screen and (max-width: 858px) {
+	.item_grid{
+		width: 572px;
+	}
+}
+
+@media only screen and (max-width: 572px) {
+	.item_grid{
+		width: 288px;
+	}
+}
+

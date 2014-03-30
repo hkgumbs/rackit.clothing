@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Closet</title>
+        <meta name="description" content="RackIt - Network for hand-me-down clothing!">
+        
+        <!-- DISABLES PINCH TO ZOOM -->
+        <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+
+        <!-- STYLE -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="style/style.css" type="text/css" />
+    </head>
+
+    <body>
+        
+        <div class="header">
+            <a href="search.html">
+                <img src="style/glyphicons_027_search.png" class="icon_search"></img>
+            </a>
+            <div class="title">
+                <span class="rack">Rack</span>
+                <span class="it">It</span>
+            </div>
+            <a href="profile.html">
+                <img src="style/glyphicons_003_user.png" class="icon_user"></img>
+            </a>
+        </div> 
+
+        <div class="modal">
+            <div class= "modal_container">
+                <form action = "create.php" method = "post">
+                    <div class="radio_container">
+                        <input class="input_gender" type="radio" name="gender" value="male">
+                        <p class="input_gender">Male</p>
+                        <input class="input_gender" type="radio" name="gender" value="female">
+                        <p class="input_gender">Female</p>
+                    </div>
+                    <input class="input_age" name="input_age" type="text" placeholder="age (ex. 5-7)" >
+                    </input>
+
+                    <div class="button_container">
+                        <input type="submit" id="login" value="Log in">
+                        </input>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
+    </body>
+</html>

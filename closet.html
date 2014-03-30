@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Listing</title>
+        <title>Closet</title>
         <meta name="description" content="RackIt - Network for hand-me-down clothing!">
         
         <!-- DISABLES PINCH TO ZOOM -->
@@ -17,34 +17,28 @@
     <body>
         
         <div class="header">
-            <img src="style/glyphicons_027_search.png" class="icon_search"></img>
+            <a href="search.html">
+                <img src="style/glyphicons_027_search.png" class="icon_search"></img>
+            </a>
             <div class="title">
                 <span class="rack">Rack</span>
                 <span class="it">It</span>
             </div>
-            <img src="style/glyphicons_003_user.png" class="icon_user"></img>
+            <a href="profile.html">
+                <img src="style/glyphicons_003_user.png" class="icon_user"></img>
+            </a>
         </div> 
 
-        <div class="modal">
-        <div class= "modal_container">
 
-            <h1 class="modal_title">[gender][age]</h1>
-            <div class="full_container">
-                <img class="full" src="style/photo_default.png" alt="image could not be loaded :(">
-            </div>
-            <div class="distance_time">
-                <h2 class="distance">[distance]</h2>
-                <h3 class="time">[time]</h3>
-            </div>
+        <div class="item_grid">
 
-            <div class="button_container">
-                <a class="button" id="rackit" >RackIt</a>
-            </div>
+            <a class="item" href="listing.html">
+                <div class="thumb_container">
+                    <img class="thumb" src="style/photo_default.png" alt="image could not be loaded :(">
+                </div>
+                <p class="item_description">[gender][age]</p>
+            </a>
 
-            <p>0 others have racked it.</p>
-
-
-        </div>
         </div>
 
     </body>
