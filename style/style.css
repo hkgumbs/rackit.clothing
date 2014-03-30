@@ -58,7 +58,7 @@ a, .login, .signup {
 	background-color: #0FBA8E;
 }
 
-.button_submit {
+#submit_hidden {
 	display: none;
 }
 

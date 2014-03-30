@@ -26,23 +26,23 @@
 		<div class="modal">
 			<div class= "modal_container">
 
-				<form action = "create.php" method = "post">
+				<form action = "create_user.php" method = "post">
 
-					<input class="input_email" type="email" placeholder="email address">
+					<input class="input_email" type="email" name="input_email" placeholder="email address">
 					</input>
-					<input class="input_password" type="password" placeholder="password">
+					<input class="input_password" type="password" name="input_password" placeholder="password">
 					</input>
-					<input class="input_confirm" type="password" placeholder="confirm password">
+					<input class="input_confirm" type="password" name="input_password_confirm" placeholder="confirm password">
 					</input>
-					<input class="input_street" type="text" placeholder="street address">
+					<input class="input_street" type="text" name="input_street_address" placeholder="street address">
 					</input>
-					<input class="input_city" type="text" placeholder="city">
+					<input class="input_city" type="text" name="input_city" placeholder="city">
 					</input>
 
 					<div class="input_state_zip_container">
-						<input class="input_state" type="text" placeholder="state" maxlength="2">
+						<input class="input_state" type="text" name="input_state" placeholder="state" maxlength="2">
 						</input>
-						<input class="input_zip" type="number" placeholder="zip">
+						<input class="input_zip" type="text" name="input_zip" placeholder="zip">
 						</input>
 					</div>
 

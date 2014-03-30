@@ -31,7 +31,10 @@
 					<input class="input_password" name="input_password" type="password" placeholder="password" />
 
 					<div class="button_container">
-						<input type="submit" class="login" name="submit" value="Log in" />
+						<input type="submit" name="submit" id="submit_hidden">
+						</input>
+						<a class="login" href="#"
+						onclick="document.getElementById('submit_hidden').submit()">Log in</a>
 
 					</div>
 				</form>
