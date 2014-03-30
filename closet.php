@@ -16,9 +16,10 @@ if (!$result) {
 
 echo '<div class="item_grid" id="mydiv">';
 
+$result = '';
+
 while ($row = pg_fetch_assoc($result)) {
 
-	$result = '';
 	$result .= '<a class="item" href="listing.html">';
 	$result .= '<div class="thumb_container">';
 	$result .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
@@ -29,11 +30,10 @@ while ($row = pg_fetch_assoc($result)) {
 	$result .= "</a>";
 	$result .= " ";
 
-	echo $result;
 	
-	pg_free_result($result);
 }
-
+echo $result;
+	
 echo '</div> ';
 
 
