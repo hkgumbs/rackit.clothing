@@ -43,22 +43,19 @@ pg_free_result($result);
 
 ?>
 
-<h1>List a Teeshirt</h1>
+<h1>Create Account</h1>
 <form action = "create.php" method = "post">
 	E-mail
 	<input type="text" name="input_email" value="" />
 	<br />
-	First Name
-	<input type="text" name="input_name_first" value="" />
-	<br />
-	Last Name
-	<input type="text" name="input_name_last" value="" />
+	Password
+	<input type="text" name="password" value="" />
 	<br />
 	<br />
 	<input type="submit" name="submit">
 </form>
 
-<h1>Delete a Teeshirt</h1>
+<h1>Delete Account</h1>
 <form action = "delete.php" method = "post">
 	E-mail
 	<input type="text" name="input_email" value="" />
