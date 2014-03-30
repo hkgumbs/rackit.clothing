@@ -9,7 +9,7 @@ $password = md5($_POST['input_password']);
 /**** CHECK FOR PASSWORD LENGTH ***/
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
-	header('Location: create_user.php');
+	header('Location: login.php');
 } else {
 
 	$result = pg_query("SELECT password FROM users_db WHERE email == '$email'");
@@ -27,4 +27,5 @@ if (!$_POST['submit']) {
 
 }
 ?>
+
 
