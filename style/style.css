@@ -67,6 +67,9 @@ input.login, input.signup {
 	background-color: #0FBA8E;
 }
 
+#submit_hidden {
+	display: none;
+}
 
 /*************************
 		HEADERS
