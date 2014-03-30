@@ -14,6 +14,8 @@ if (!$_POST['submit']) {
 
 	$result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
 
+	echo '<td>' . $result . '</td>';
+	
 	if (!$result) {
 		echo "E-mail not found" . $query . "<br/>";
 		header('Location: login.php');
