@@ -14,6 +14,7 @@ if (!$result) {
 	exit();
 }
 
+/*
 echo '<div class="item_grid" id="mydiv">';
 
 while ($row = pg_fetch_assoc($result)) {
@@ -32,8 +33,7 @@ while ($row = pg_fetch_assoc($result)) {
 }
 
 echo '</div> ';
-
-
+*/
 
 
 ?>
