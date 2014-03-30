@@ -33,7 +33,7 @@ a:link, a:visited, a:hover, a:active {
 	text-decoration:none;
 }
 
-a.button, #login, #signup, #search {
+a.button, #login, #signup, #search, #list {
 	text-transform: uppercase;
 	border: #ffffff solid thick;
 	border-radius: 18px;
@@ -50,7 +50,7 @@ a.button {
 	line-height: 72px;
 }
 
-input#login, input#signup, input#search {
+input#login, input#signup, input#search, input#list {
 	margin: 5px auto;
 	float: center;
 	width: 445px;
@@ -62,7 +62,7 @@ input#login, input#signup, input#search {
 	text-align: center;
 }
 
-#login, #rackit, #search {
+#login, #rackit, #search, #list {
 	background-color: #E49407;
 }
 
@@ -70,6 +70,27 @@ input#login, input#signup, input#search {
 	background-color: #0FBA8E;
 }
 
+input#file {
+	cursor:pointer;
+	text-transform: uppercase;
+	color: #0FBA8E;
+	background-color: #0FBA8E;
+}
+
+#file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#file:before {
+	color: white;
+	text-align: center;
+	content: 'Upload image';
+	display: block;
+}
+
+p.hint {
+	margin-top: 0;
+}
 
 /*************************
 		HEADERS
@@ -195,6 +216,11 @@ textarea, input {
 	padding: 0;
 	width: 20px;
 	height: 18px;
+}
+
+input#login {
+	line-height: 72px;
+	vertical-align: middle;
 }
 
 /*************************
