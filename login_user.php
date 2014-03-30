@@ -14,18 +14,18 @@ if (!$_POST['submit']) {
 
 	$result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
 
-	echo '<html><br /><br /><br /><br /><br /><br /><body><table><tr>';
 	echo '<td>' . $result . '</td>';
+	
 	
 	if (!$result) {
 		echo "E-mail not found" . $query . "<br/>";
-		header('Location: login.php');
+		/*header('Location: login.php');*/
 	} else if ($password != $result) {
 		echo "E-mail not found" . $query . "<br/>";
-		header('Location: login.php');
+		/*header('Location: login.php');*/
 	} else {
 		/* go to listings page */
-		header('Location: index.php');
+		/*header('Location: index.php');*/
 	}
 
 }
