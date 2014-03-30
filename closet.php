@@ -14,32 +14,30 @@ if (!$result) {
 	exit();
 }
 
-
 echo '<div class="item_grid" id="mydiv">';
 
 while ($row = pg_fetch_assoc($result)) {
-	
-	
+
 	$result = '';
 	$result .= '<a class="item" href="listing.html">';
 	$result .= '<div class="thumb_container">';
 	$result .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$result .= "<div>";
-	$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row['age_rang'] . ']</p>';
+	$result .= '<p class="item_description">' . $row['gender'] . ',' . $row['age_rang'] . '</p>';
 	$result .= "</div>";
 	$result .= "</div>";
 	$result .= "</a>";
 	$result .= " ";
-	
+
 	echo $result;
 }
 
 echo '</div> ';
 
+header('Location: closet.php');
 
 
 ?>
-
 
 <!--<div class="item_grid" id="mydiv"><?php echo $result; ?></div> -->
 
