@@ -16,10 +16,10 @@ $zip = $_POST['input_zip'];
 /**** CHECK FOR PASSWORD LENGTH ***/
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
-	header('Location: create_user.php');
+	header('Location: signup.php');
 } else if ($password != $password_confirm) {
 	echo "passwords don't match";
-	header('Location: create_user.php');
+	header('Location: signup.php');
 } else {
 	pg_query("INSERT INTO users_db (email, password, address_street, address_city, address_state, address_zipcode)
 					   VALUES('$email','$password', '$street_address', '$city', '$state', '$zip')") or die('Error: ' . pg_last_error());
