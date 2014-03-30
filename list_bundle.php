@@ -11,7 +11,7 @@ $female = 'F';
 
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
-	header('Location: signup.php');
+	header('Location: upload.html');
 }
 
 if ($selected_radio == 'male') {
