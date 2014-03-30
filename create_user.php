@@ -19,7 +19,7 @@ if (!$_POST['submit']) {
 	echo "passwords don't match";
 	header('Location: create_user.php');
 } else {
-	pg_query("INSERT INTO users_db (email, password, address_street, address_city, address_state, address_zip_code)
+	pg_query("INSERT INTO users_db (email, password, address_street, address_city, address_state, address_zipcode)
 					   VALUES('$email','$password', '$street_address', '$city', '$state', '$zip')") or die('Error: ' . pg_last_error());
 	echo "User has been added!";
 	header('Location: login.php');
