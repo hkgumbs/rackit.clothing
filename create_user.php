@@ -6,8 +6,8 @@ $email = $_POST['input_new_email'];
 /* $user_name = $_POST['input_name_first']; */
 $password = md5($_POST['input_password']);
 $password_confirm = md5($_POST['input_password_confirm']);
-$street_address = ($_POST['street_address']);
-$city = ($_POST['city']);
+$street_address = ($_POST['input_street_address']);
+$city = ($_POST['input_city']);
 $state = ($_POST['input_state']);
 $zip = ($_POST['input_zip']);
 
