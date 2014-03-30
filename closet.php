@@ -14,9 +14,9 @@ if (!$result) {
 	exit();
 }
 
-/*'<div class="item_grid" id="mydiv">';
+echo '<div class="item_grid" id="mydiv">';
 
-while ($row = mysql_fetch_assoc($result)) {
+while ($row = pg_fetch_assoc($result)) {
 	
 	
 	$result = '';
@@ -31,20 +31,9 @@ while ($row = mysql_fetch_assoc($result)) {
 	echo $result;
 }
 
-echo '</div> ';*/
+echo '</div> ';
 
-echo '<div class="item_grid" id="mydiv">';
 
-echo          '<a class="item" href="listing.html">';
-echo                '<div class="thumb_container">';
-echo                    '<img class="thumb" src="style/photo_default.png" alt="image could not be loaded :(">';
-echo                '</div>';
-echo                '<p class="item_description">[gender][age]</p>';
-echo            '</a>';
-            
-            
-
-echo        '</div>';
 
 
 ?>
