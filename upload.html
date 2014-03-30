@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Listing</title>
+        <meta name="description" content="RackIt - Network for hand-me-down clothing!">
+        
+        <!-- DISABLES PINCH TO ZOOM -->
+        <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+
+        <!-- STYLE -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="style/style.css" type="text/css" />
+    </head>
+
+    <body>
+        
+        <div class="header">
+            <img src="style/glyphicons_027_search.png" class="icon_search"></img>
+            <div class="title">
+                <span class="rack">Rack</span>
+                <span class="it">It</span>
+            </div>
+            <img src="style/glyphicons_003_user.png" class="icon_user"></img>
+        </div> 
+
+        <div class="modal">
+        <div class= "modal_container">
+
+            <h1 class="modal_title">New listing</h1>
+
+            <form action="upload_file.php" method="post" enctype="multipart/form-data">
+                
+                <div class="radio_male_container">
+                    <input id="input_gender_male" class="input_gender" type="radio" name="gender" value="male">
+                    <label for="input_gender_male" class="input_gender">Male</label>
+                </div>
+                <div class="radio_female_container">
+                    <input id="input_gender_female" class="input_gender" type="radio" name="gender" value="female">
+                    <label for="input_gender_female" class="input_gender">Female</label>
+                </div>
+
+                <input class="input_age" name="input_age" type="text" placeholder="age (ex. 5-7)" >
+                </input>
+
+                <input type="file" name="file" id="file" type=file accept="image/*">
+                <p class="hint">hover over upload button for details</p>
+
+                <div class="button_container">
+                    <input type="submit" class="button" name="submit" id="list" value="List"></input>
+                </div>
+
+            </form>
+
+        </div>
+        </div>
+
+    </body>
+</html>
