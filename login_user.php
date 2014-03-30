@@ -1,5 +1,6 @@
 <?php
 
+
 include "includes/connection.php";
 
 $email = $_POST['input_email'];

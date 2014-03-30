@@ -2,7 +2,9 @@
 
 include "includes/connection.php";
 
-$email = $_POST['input_new_email'];
+/* Make all emails lowercase so they compare alright */
+/* eg DAVID@gmail.com should = david@gmail.com */
+$email = strtolower($_POST['input_new_email']);
 /* $user_name = $_POST['input_name_first']; */
 $password = md5($_POST['input_password']);
 $password_confirm = md5($_POST['input_password_confirm']);
