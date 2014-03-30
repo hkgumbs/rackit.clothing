@@ -19,13 +19,13 @@ if (!$_POST['submit']) {
 	
 	if (!$result) {
 		echo "E-mail not found" . $query . "<br/>";
-		/*header('Location: login.php');
+		header('Location: login.php');
 	} else if ($password != $result) {
 		echo "Incorrect Password" . $query . "<br/>";
-		header('Location: login.php');*/
+		header('Location: login.php');
 	} else {
 		/* go to listings page */
-		/*header('Location: index.php');*/
+		header('Location: index.php');
 	}
 
 }
