@@ -1,0 +1,171 @@
+/*************************
+		WHOLE PAGE
+*************************/
+
+body {
+	background-color: #1D9EA4;
+	margin: 0;
+	padding: 0;
+}
+
+body, input, select, button {
+	color: #ffffff;
+	font-family: 'Roboto Slab', serif;	
+}
+
+p {
+	font-size: 24px;
+	text-align: justify;
+	font-weight: 200;
+}
+
+
+/*************************
+		BUTTONS
+*************************/
+
+a:link, a:visited, a:hover, a:active {
+	color: #ffffff;
+	text-decoration:none;
+}
+
+a {
+	text-transform: uppercase;
+	border: #ffffff solid thick;
+	border-radius: 18px;
+	display: inline-block; 
+	font-size: 36px;
+	height: 72px;
+	line-height: 72px;
+	margin: 5px;
+	padding: 10px;
+}
+
+.button_container {
+	margin-top: 36px;
+	text-align: center;
+}
+
+.login, .signup {
+	width: 90%;
+}
+
+.login {
+	background-color: #E49407;
+}
+
+.signup {
+	background-color: #0FBA8E;
+}
+
+
+/*************************
+		HEADERS
+*************************/
+
+h1 {
+	font-weight: 100;
+	font-size: 72px;
+}
+
+.rack {
+	font-size: 36px;
+	font-weight: 100;
+}
+
+.it {
+	font-size: 36px;
+	font-weight: 700;
+}
+
+.header {
+	background-color: #ffffff;
+	display: table;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	top: 0;
+}
+
+.title {
+	color: #000000;
+	display: table-cell;
+	margin: auto;
+}
+
+.icon_search {
+	float: left;
+}
+
+.icon_user {
+	float: right;
+}
+
+.icon_search, .icon_user {
+	display: table-cell;
+	height: 24px;
+	width: 24px;
+	vertical-align: middle;
+	padding: 0 36px;
+}
+
+
+/*************************
+		INPUT
+*************************/
+input {
+	background-color: #1D9EA4;
+	border: #ffffff solid thick;
+	border-radius: 18px;
+	height: 72px;
+	color: #ffffff;
+	font-size: 36px;
+	margin: 10px;
+	padding: 10px;
+	width: 90%;
+}
+
+textarea, input { 
+	outline: none; 
+}
+
+::-webkit-input-placeholder {
+   color: #77c4c8;
+   text-transform: lowercase;
+}
+
+.input_state_zip_container {
+	display: inline;
+	width: 90%;
+}
+
+.input_zip {
+	float: right;
+	margin-left: 0;
+	width: 54%;
+}
+
+.input_state {
+	float: left;
+	margin-right: 0;
+	text-transform: uppercase;
+	width: 24%;
+}
+
+/*************************
+		MODAL
+*************************/
+
+.modal {
+	max-width: 480px;
+	margin: 96px auto 48px;
+
+}
+
+.modal_container {
+	margin: 0 10px;
+}
+
+.modal_title {
+	text-align: center;
+}
