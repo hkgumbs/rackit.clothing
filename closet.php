@@ -14,34 +14,22 @@ if (!$result) {
 	exit();
 }
 
-$result = '';
+echo'<div class="item_grid" id="mydiv">';
 
 while ($row = mysql_fetch_array($result)) {
-
+	
+	
+	$result = '';
 	$result .= '<a class="item" href="listing.html">';
 	$result .= '<div class="thumb_container">';
 	$result .= '<img class="thumb" src="bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$result .= "<div>";
-	if ($row[age_high]) {
-		$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row[age_low] . '-' . $row[age_high] . ']</p>';
-	} else {
-		$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row[age_low] . ']</p>';
-	}
+	$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row[age_range] . ']</p>';
 	$result .= "</a>";
 	$result .= " ";
+	
+	echo $result;
 }
-
-echo'<div class="item_grid" id="mydiv">';
-
-
-$result .= '<a class="item" href="listing.html">';
-$result .= '<div class="thumb_container">';
-$result .= '<img class="thumb" src="style/photo_default.png" alt="image could not be loaded :(">';
-$result .= '</div>';
-$result .= '<p class="item_description">[gender][age]</p>';
-$result .= '</a>';
-
-echo $result;
 
 
 echo '</div>' . " ";
