@@ -12,7 +12,7 @@ if (!$_POST['submit']) {
 	header('Location: login.php');
 } else {
 
-	$result = pg_query("SELECT password FROM users_db WHERE email == '$email'");
+	$result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
 
 	if (!$result) {
 		echo "E-mail not found" . $query . "<br/>";
