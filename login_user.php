@@ -6,7 +6,7 @@ $email = strtolower($_POST['input_email']);
 echo $email;
 /* $user_name = $_POST['input_name_first']; */
 $password = md5($_POST['input_password']);
-echo $_POST['input_password']; "<br/>";
+echo $password . "<br/>";
 
 
 if (!$_POST['submit']) {
@@ -22,6 +22,7 @@ if (!$_POST['submit']) {
 		echo "E-mail not found" . $query . "<br/>";
 		/*header('Location: login.php');*/
 	} else if ($password != $myrow['password']) {
+		echo $myrow['password'] . "<br/>";
 		echo "Incorrect Password" . $query . "<br/>";
 		echo '<td>' . pg_fetch_row($result) . '</td>';
 		/*header('Location: login.php');*/
