@@ -16,7 +16,7 @@ if (!$result) {
 
 echo '<div class="item_grid" id="mydiv">';
 
-while ($row = pg_fetch_assoc($result)) {
+while ($row = pg_fetch_row($result)) {
 
 	$result = '';
 	$result .= '<a class="item" href="listing.html">';
