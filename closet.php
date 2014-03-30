@@ -20,7 +20,7 @@ $to_echo = '';
 
 while ($row = pg_fetch_assoc($result)) {
 
-	$to_echo .= '<a class="item" href="listing.html">';
+	$to_echo .= '<a class="item" href="listing.html?id='.$row['bundle_id'].'" id="' . $row['bundle_id'] . '">';
 	$to_echo .= '<div class="thumb_container">';
 	$to_echo .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$to_echo .= "<div>";
@@ -35,6 +35,7 @@ while ($row = pg_fetch_assoc($result)) {
 echo $to_echo;
 	
 echo '</div> ';
+
 
 
 
