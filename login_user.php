@@ -3,11 +3,16 @@
 include "includes/connection.php";
 
 $email = strtolower($_POST['input_email']);
+echo $email;
 /* $user_name = $_POST['input_name_first']; */
 $password = md5($_POST['input_password']);
-
+echo $_POST['input_password'];
 /**** CHECK FOR PASSWORD LENGTH ***/
-if (!$_POST['submit']) {
+
+?>
+
+<!--
+	if (!$_POST['submit']) {
 	echo "please fill out all of the form";
 	header('Location: login.php');
 } else {
@@ -31,5 +36,5 @@ if (!$_POST['submit']) {
 	}
 
 }
-?>
 
+-->
