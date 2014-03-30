@@ -1,6 +1,7 @@
 <?php
 
 include "includes/connection.php";
+include "include/sendgrid-php/sendgrid-php.php";
 
 /* Make all emails lowercase so they compare alright */
 /* eg DAVID@gmail.com should = david@gmail.com */
@@ -12,6 +13,16 @@ $street_address = $_POST['input_street_address'];
 $city = $_POST['input_city'];
 $state = $_POST['input_state'];
 $zip = $_POST['input_zip'];
+
+/*
+$sendgrid = new SendGrid('davidlim14', 'doublehappiness14');
+$email    = new SendGrid\Email();
+$email->addTo($email)->
+       setFrom('rackit@gmail.com')->
+       setSubject('Account Confirmation!')->
+       setHtml('<strong>Welcome! Please confirm your email by clicking the link below</strong><p><a href="http://rackit.clothing/verify.php?email=' . urlencode($email) . '&v=' . md5("yay" . $email) . '"></a></p>');
+
+$sendgrid->send($email);*/
 
 /**** CHECK FOR PASSWORD LENGTH ***/
 if (!$_POST['submit']) {

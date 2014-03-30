@@ -20,7 +20,7 @@ while ($row = mysql_fetch_array($result)) {
 
 	$result .= '<a class="item" href="listing.html">';
 	$result .= '<div class="thumb_container">';
-	$result .= '<img class="thumb" src="' . $row['image_id'] . '" alt="image could not be loaded :(">';
+	$result .= '<img class="thumb" src="bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$result .= "<div>";
 	if ($row[age_high]) {
 		$result .= '<p class="item_description">[' . $row['gender'] . '][' . $row[age_low] . '-' . $row[age_high] . ']</p>';
