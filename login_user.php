@@ -2,7 +2,7 @@
 
 include "includes/connection.php";
 
-$email = $_POST['input_email'];
+$email = strtolower($_POST['input_email']);
 /* $user_name = $_POST['input_name_first']; */
 $password = md5($_POST['input_password']);
 
@@ -21,7 +21,7 @@ if (!$_POST['submit']) {
 		echo "E-mail not found" . $query . "<br/>";
 		/*header('Location: login.php');*/
 	} else if ($password != $result) {
-		echo "E-mail not found" . $query . "<br/>";
+		echo "Incorrect Password" . $query . "<br/>";
 		/*header('Location: login.php');*/
 	} else {
 		/* go to listings page */
