@@ -6,12 +6,12 @@ include "includes/connection.php";
 /* eg DAVID@gmail.com should = david@gmail.com */
 $email = strtolower($_POST['input_new_email']);
 /* $user_name = $_POST['input_name_first']; */
-$password = md5($_POST['input_password']);
-$password_confirm = md5($_POST['input_password_confirm']);
-$street_address = ($_POST['input_street_address']);
-$city = ($_POST['input_city']);
-$state = ($_POST['input_state']);
-$zip = ($_POST['input_zip']);
+$password = trim(md5($_POST['input_password']));
+$password_confirm = trim(md5($_POST['input_password_confirm']));
+$street_address = $_POST['input_street_address'];
+$city = $_POST['input_city'];
+$state = $_POST['input_state'];
+$zip = $_POST['input_zip'];
 
 /**** CHECK FOR PASSWORD LENGTH ***/
 if (!$_POST['submit']) {

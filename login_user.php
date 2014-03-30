@@ -5,7 +5,7 @@ include "includes/connection.php";
 $email = strtolower($_POST['input_email']);
 echo $email;
 /* $user_name = $_POST['input_name_first']; */
-$password = md5($_POST['input_password']);
+$password = trim(md5($_POST['input_password']));
 echo $password . "<br/>";
 
 
@@ -21,7 +21,7 @@ if (!$_POST['submit']) {
 		echo '<td>' . pg_fetch_row($result) . '</td>';
 		echo "E-mail not found" . $query . "<br/>";
 		/*header('Location: login.php');*/
-	} else if (trim($password) != trim($myuser['password'])) {
+	} else if ($password != $myuser['password']) {
 		echo $myuser['password'];
 		echo "Incorrect Password" . $query . "<br/>";
 		echo '<td>' . pg_fetch_row($result) . '</td>';
