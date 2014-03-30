@@ -29,10 +29,6 @@ while ($row = mysql_fetch_array($result)) {
 	}
 	$result .= "</a>";
 	$result .= " ";
-	<html>
-	<div class="item_grid" id="mydiv"><?php echo $result; ?></div> 
-	
-	</html>
 }
 
 $result .= '<a class="item" href="listing.html">';
