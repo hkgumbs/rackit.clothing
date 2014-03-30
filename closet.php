@@ -30,6 +30,8 @@ while ($row = pg_fetch_assoc($result)) {
 	$result .= " ";
 
 	echo $result;
+	
+	pg_free_result($result);
 }
 
 echo '</div> ';
