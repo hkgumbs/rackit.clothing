@@ -7,9 +7,7 @@ $user_id = $_SESSION['my_id'];
 
 $id = $_GET['id'];
 
-$result = pg_query("SELECT password FROM bundles WHERE bundle_id = '$id'");
-
-$result = pg_query($query);
+$result = pg_query("SELECT bundle_id FROM bundles WHERE bundle_id = '$id'");
 
 $mybundle = pg_fetch_assoc($result);
 
