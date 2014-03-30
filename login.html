@@ -26,14 +26,15 @@
 
 		<div class="modal">
 			<div class= "modal_container">
-				<form action = "create.php" name="login_form" method = "post" id="login_form">
-					<input class="input_email" name="input_email" type="email" placeholder="email address" />
-					<input class="input_password" name="input_password" type="password" placeholder="password" />
+				<form action = "create.php" method = "post">
+					<input class="input_email" name="input_email" type="email" placeholder="email address">
+					</input>
+					<input class="input_password" name="input_password" type="password" placeholder="password">
+					</input>
 
 					<div class="button_container">
-						<a class="login" href="javascript:login_form.submit()" 
-						onclick="document.getElementById('login_form').submit()">Log in</a>
-
+						<input type="submit" class="login">
+						</input>
 					</div>
 				</form>
 			</div>
