@@ -8,7 +8,7 @@ if (!$link)
 	die('Error: Could not connect: ' . pg_last_error());
 }
 
-	$color = $_POST['inputColor'];
+	$email = $_POST['input_email'];
 
 
 	if(!$_POST['submit']) {
@@ -17,8 +17,8 @@ if (!$link)
 		
 	}
 	else{
-		pg_query($link,"DELETE FROM TeeShirts WHERE color='$color'") or die('Error: ' . pg_last_error());
-		echo "Teeshirt has been deleted!";
+		pg_query($link,"DELETE FROM users_db WHERE email='$email'") or die('Error: ' . pg_last_error());
+		echo "User has been deleted!";
 		header('Location: index.php');
 	}
 	

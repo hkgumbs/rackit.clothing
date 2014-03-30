@@ -21,11 +21,14 @@ while($myrow = pg_fetch_assoc($result)) {
 
 <h1>List a Teeshirt</h1>
 <form action = "create.php" method = "post">
-	Color
-	<input type="text" name="inputColor" value="" />
+	E-mail
+	<input type="text" name="input_email" value="" />
 	<br />
-	Size
-	<input type="text" name="inputSize" value="" />
+	First Name
+	<input type="text" name="input_name_first" value="" />
+	<br />
+	Last Name
+	<input type="text" name="input_name_last" value="" />
 	<br />
 	<br />
 	<input type="submit" name="submit">
@@ -33,8 +36,8 @@ while($myrow = pg_fetch_assoc($result)) {
 
 <h1>Delete a Teeshirt</h1>
 <form action = "delete.php" method = "post">
-	Color
-	<input type="text" name="inputColor" value="" />
+	E-mail
+	<input type="text" name="input_email" value="" />
 	<br />
 	<br />
 	<input type="submit" name="submit">
