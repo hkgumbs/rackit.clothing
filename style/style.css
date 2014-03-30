@@ -58,6 +58,9 @@ a {
 	background-color: #0FBA8E;
 }
 
+.button_submit {
+	display: none;
+}
 
 /*************************
 		HEADERS
