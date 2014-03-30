@@ -21,6 +21,7 @@ if (!$_POST['submit']) {
 		/*header('Location: login.php');*/
 	} else if ($password != pg_fetch_row($result)) {
 		echo "Incorrect Password" . $query . "<br/>";
+		echo '<td>' . pg_fetch_row($result) . '</td>';
 		/*header('Location: login.php');*/
 	} else {
 		/* go to listings page */
