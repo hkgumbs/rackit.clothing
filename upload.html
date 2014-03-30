@@ -38,7 +38,7 @@
 
             <h1 class="modal_title">New listing</h1>
 
-            <form action="upload_file.php" method="post" enctype="multipart/form-data">
+            <form action="list_bundle.php" method="post" enctype="multipart/form-data">
                 
                 <div class="radio_male_container">
                     <input id="input_gender_male" class="input_gender" type="radio" name="gender" value="male">
@@ -52,8 +52,10 @@
                 <input class="input_age" name="input_age" type="text" placeholder="age (ex. 5-7)" >
                 </input>
 
-                <input type="file" name="file" id="file" type=file accept="image/*">
+                <input type="file" name="file" id="file" accept="image/*">
                 <p class="hint">hover over upload button for details</p>
+                
+                
 
                 <div class="button_container">
                     <input type="submit" class="button" name="submit" id="list" value="List"></input>

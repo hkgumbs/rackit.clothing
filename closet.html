@@ -1,39 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Closet</title>
-        <meta name="description" content="RackIt - Network for hand-me-down clothing!">
-        
-        <!-- DISABLES PINCH TO ZOOM -->
-        <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+	<head>
+		<meta charset="utf-8">
+		<title>Closet</title>
+		<meta name="description" content="RackIt - Network for hand-me-down clothing!">
 
-        <!-- STYLE -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-        <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="stylesheet" href="style/style.css" type="text/css" />
-    </head>
+		<!-- DISABLES PINCH TO ZOOM -->
+		<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
 
-    <body>
-        
-        <div class="header">
-            <a class="title" href="search.html">
-                <img src="style/glyphicons_027_search.png" class="icon_search"></img>
-            </a>
+		<!-- STYLE -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" href="style/style.css" type="text/css" />
+	</head>
 
-            <div class="title">
-            <a href="closet.php">
-                <span class="rack">Rack</span>
-                <span class="it">It</span>
-            </a>
-            </div>
+	<body>
 
-            <a href="upload.html">
-                <img src="style/glyphicons_201_upload.png" class="icon_user"></img>
-            </a>
-        </div> 
+		<div class="header">
+			<a href="search.html"> <img src="style/glyphicons_027_search.png" class="icon_search"></img> </a>
+			<div class="title">
+				<span class="rack">Rack</span>
+				<span class="it">It</span>
+			</div>
+			<a href="upload.html"> <img src="style/glyphicons_201_upload.png" class="icon_user"></img> </a>
+		</div>
 
+		<div class="item_grid" id="mydiv">
 
+			<a class="item" href="listing.html">
+			<div class="thumb_container">
+				<img class="thumb" src="./bundle_images/img1.jpg" alt="image could not be loaded :(">
+				<div>
+					<p class="item_description">
+						Female, 7-8
+					</p>
+				</div>
+			</div>
+			</a>
 
-    </body>
+			<a class="item" href="listing.html">
+			<div class="thumb_container">
+				<img class="thumb" src="./bundle_images/img2.jpg" alt="image could not be loaded :(">
+				<div>
+					<p class="item_description">
+						Male, 6-5
+					</p>
+				</div>
+			</div>
+			</a>
+
+			<a class="item" href="listing.html">
+			<div class="thumb_container">
+				<img class="thumb" src="./bundle_images/img3.jpg" alt="image could not be loaded :(">
+				<div>
+					<p class="item_description">
+						Male, 3
+					</p>
+				</div>
+			</div>
+			</a>
+
+		</div>
+
+	</body>
 </html>
