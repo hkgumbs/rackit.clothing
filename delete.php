@@ -1,12 +1,7 @@
 <?php //include_once("home.html");
 
-	include 'includes/connection.php';
+	include "includes/connection.php";
 
-$link = pg_connect ($connectString);
-if (!$link)
-{
-	die('Error: Could not connect: ' . pg_last_error());
-}
 
 	$email = $_POST['input_email'];
 
@@ -17,7 +12,7 @@ if (!$link)
 		
 	}
 	else{
-		pg_query($link,"DELETE FROM users_db WHERE email='$email'") or die('Error: ' . pg_last_error());
+		pg_query("DELETE FROM users_db WHERE email='$email'") or die('Error: ' . pg_last_error());
 		echo "User has been deleted!";
 		header('Location: index.php');
 	}

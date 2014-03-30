@@ -1,12 +1,6 @@
 <?php //include_once("home.html");
 
-    include 'includes/connection.php';
-
-$link = pg_connect ($connectString);
-if (!$link)
-{
-	die('Error: Could not connect: ' . pg_last_error());
-}
+    include "includes/connection.php";
 
     $email = $_POST['input_email'];
 	$name_first = $_POST['name_first'];
@@ -18,10 +12,11 @@ if (!$link)
 		
 	}
 	else{
-		pg_query($link,"INSERT INTO users_db (`email`, `name_last`, `name_first`)
+		pg_query("INSERT INTO users_db (`email`, `name_last`, `name_first`)
 					   VALUES('$email','$name_last','$name_last')") or die('Error: ' . pg_last_error());
 		echo "Teeshirt has been added!";
 		header('Location: index.php');
 	}
 
 ?>
+
