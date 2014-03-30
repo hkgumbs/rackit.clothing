@@ -11,7 +11,7 @@ echo $_POST['input_password']; "<br/>";
 
 $result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
 $myrow = pg_fetch_assoc($result);
-echo htmlspecialchars($myrow['password'])
+echo ($myrow['password'])
 
 
 
