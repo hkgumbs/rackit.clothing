@@ -3,8 +3,8 @@
     include "includes/connection.php";
 
     $email = $_POST['input_email'];
-	$name_first = $_POST['name_first'];
-	$name_last = $_POST['name_last'];
+	$name_first = $_POST['input_name_first'];
+	$name_last = $_POST['input_name_last'];
 
 	if(!$_POST['submit']) {
 		echo "please fill out the form";
