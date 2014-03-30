@@ -29,7 +29,7 @@ a:link, a:visited, a:hover, a:active {
 	text-decoration:none;
 }
 
-a, .login {
+a, .login, .signup {
 	text-transform: uppercase;
 	border: #ffffff solid thick;
 	border-radius: 18px;
