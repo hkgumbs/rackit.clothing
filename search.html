@@ -31,18 +31,21 @@
 
         <div class="modal">
             <div class= "modal_container">
-                <form action = "create.php" method = "post">
-                    <div class="radio_container">
-                        <input class="input_gender" type="radio" name="gender" value="male">
-                        <p class="input_gender">Male</p>
-                        <input class="input_gender" type="radio" name="gender" value="female">
-                        <p class="input_gender">Female</p>
+                <form action = "search.php" method = "post">
+                    <div class="radio_male_container">
+                        <input id="input_gender_male" class="input_gender" type="radio" name="gender" value="male">
+                        <label for="input_gender_male" class="input_gender">Male</label>
                     </div>
+                    <div class="radio_female_container">
+                        <input id="input_gender_female" class="input_gender" type="radio" name="gender" value="female">
+                        <label for="input_gender_female" class="input_gender">Female</label>
+                    </div>
+
                     <input class="input_age" name="input_age" type="text" placeholder="age (ex. 5-7)" >
                     </input>
 
                     <div class="button_container">
-                        <input type="submit" id="login" value="Log in">
+                        <input type="submit" id="search" value="Search">
                         </input>
                     </div>
                 </form>
