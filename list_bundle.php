@@ -30,7 +30,19 @@ pg_query("INSERT INTO bundles (age_range)
 pg_query("INSERT INTO bundles (image_id))
 					   VALUES('$file_name')") or die('Error: ' . pg_last_error());
 
-file_put_contents('./bundle_images', $image);
 
+if ($_FILES["file"]["error"] > 0)
+  {
+  echo "Error: " . $_FILES["file"]["error"] . "<br>";
+  }
+else
+  {
+  echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+  echo "Type: " . $_FILES["file"]["type"] . "<br>";
+  echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+  echo "Stored in: " . $_FILES["$file_name"]["./bundle_images"];
+  }
+  
+  
 header('Location: closet.php');
 ?>
