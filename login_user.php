@@ -12,8 +12,6 @@ if (!$_POST['submit']) {
 	echo "please fill out all of the form";
 	header('Location: login.php');
 } else {
-
-	$result = pg_query("DELET FROM bundles");
 	
 	$result = pg_query("SELECT password FROM users_db WHERE email = '$email'");
 	$myuser = pg_fetch_assoc($result);
