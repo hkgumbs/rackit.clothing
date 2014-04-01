@@ -7,7 +7,7 @@ $user_id = $_SESSION['my_id'];
 
 $id = $_GET['id'];
 
-$result = pg_query("SELECT id FROM bundles WHERE bundle_id = '$id'");
+$result = pg_query("SELECT id FROM bundles WHERE id = '$id'");
 
 $mybundle = pg_fetch_assoc($result);
 
