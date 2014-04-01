@@ -13,7 +13,7 @@ $mybundle = pg_fetch_assoc($result);
 
 echo '<div class="modal">';
 echo '<div class= "modal_container">';
-echo '<h1 class="modal_title">' . $mybundle['gender']. ', Age' . $mybundle['age_rang'] . '</h1>';
+echo '<h1 class="modal_title">' . $mybundle['gender']. ', Age ' . $mybundle['age_rang'] . '</h1>';
 echo '<div class="full_container">';
 echo '<img class="full" src="./bundle_images/' . $mybundle['image_id'] . '" alt="image could not be loaded :(">';
 echo '</div>';
