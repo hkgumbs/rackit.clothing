@@ -5,7 +5,7 @@ include "includes/connection.php";
 
 $user_id = $_SESSION['my_id'];
 
-$query = "SELECT * FROM bundles";
+$query = "SELECT * FROM Bundles";
 
 $result = pg_query($query);
 if (!$result) {
@@ -20,11 +20,11 @@ $to_echo = '';
 
 while ($row = pg_fetch_assoc($result)) {
 
-	$to_echo .= '<a class="item" href="listing.php?id='.$row['id'].'" id="' . $row['id'] . '">';
+	$to_echo .= '<a class="item" href="listing.php?id='.$row['bundle_id'].'" id="' . $row['bundle_id'] . '">';
 	$to_echo .= '<div class="thumb_container">';
 	$to_echo .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$to_echo .= "<div>";
-	$to_echo .= '<p class="item_description">' . $row['gender'] . ', Age ' . $row['age_rang'] . '</p>';
+	$to_echo .= '<p class="item_description">' . $row['gender'] . ', Age ' . $row['age_range'] . '</p>';
 	$to_echo .= "</div>";
 	$to_echo .= "</div>";
 	$to_echo .= "</a>";

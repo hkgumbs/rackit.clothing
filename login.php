@@ -4,7 +4,7 @@ include_once ("login.html");
 include "includes/connection.php";
 
 /*
-$query = "SELECT * FROM users_db";
+$query = "SELECT * FROM User";
 
 $result = pg_query($query);
 if (!$result) {

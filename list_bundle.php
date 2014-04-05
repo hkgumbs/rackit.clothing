@@ -44,7 +44,7 @@ if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "im
 	echo "Invalid file";
 }
 
-pg_query("INSERT INTO bundles (gender,age_rang,image_id)
+pg_query("INSERT INTO Bundle (gender,age_range,image_id)
 					   VALUES('$gender','$age','$temp')") or die('Error: ' . pg_last_error());
 
 header('Location: closet.php');

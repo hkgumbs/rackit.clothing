@@ -12,7 +12,7 @@
 		
 	}
 	else{
-		pg_query("DELETE FROM users_db WHERE email='$email'") or die('Error: ' . pg_last_error());
+		pg_query("DELETE FROM User WHERE email='$email'") or die('Error: ' . pg_last_error());
 		echo "User has been deleted!";
 		header('Location: index.php');
 	}
