@@ -5,7 +5,7 @@ include "includes/connection.php";
 
 $user_id = $_SESSION['my_id'];
 
-$query = "SELECT * FROM Bundle";
+$query = "SELECT * FROM bundle";
 
 $result = pg_query($query);
 if (!$result) {
