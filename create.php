@@ -13,9 +13,9 @@
 		
 	}
 	else{
-		pg_query("INSERT INTO User (email, password)
+		pg_query("INSERT INTO user (email, password)
 					   VALUES('$email','$password')") or die('Error: ' . pg_last_error());
-		echo "User has been added!";
+		echo "user has been added!";
 		header('Location: login.php');
 	}
 
