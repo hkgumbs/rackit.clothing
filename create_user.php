@@ -32,9 +32,9 @@ if (!$_POST['submit']) {
 	echo "passwords don't match";
 	header('Location: signup.php');
 } else {
-	pg_query("INSERT INTO User (email, password, address_street, address_city, address_state, address_zipcode)
+	pg_query("INSERT INTO user (email, password, address_street, address_city, address_state, address_zipcode)
 					   VALUES('$email','$password', '$street_address', '$city', '$state', '$zip')") or die('Error: ' . pg_last_error());
-	echo "User has been added!";
+	echo "user has been added!";
 	header('Location: help.html');
 }
 ?>
