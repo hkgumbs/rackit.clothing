@@ -50,7 +50,7 @@ $image_id = $_FILES["file"]["name"];
 
 
 pg_query("INSERT INTO bundle (gender,age_range,image_id)
-					   VALUES('$gender','$age','$temp')") or die('Error: ' . pg_last_error());
+					   VALUES('$gender','$age','$image_id')") or die('Error: ' . pg_last_error());
 
 header('Location: closet.php');
 ?>
