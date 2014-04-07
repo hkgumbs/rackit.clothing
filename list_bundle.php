@@ -19,7 +19,6 @@ if (!$_POST['submit']) {
 }
 
 
-	echo "<script>window.alert(please fill out form)</script>";
 /* do some age checking here and make mens womens boys girls accordingly */
 if ($selected_radio == 'male') {
 
@@ -34,8 +33,11 @@ if ($selected_radio == 'male') {
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
-if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/jpg") 
-|| ($_FILES["file"]["type"] == "image/pjpeg") || ($_FILES["file"]["type"] == "image/x-png") || ($_FILES["file"]["type"] == "image/png")) 
+$type = strtolower($_FILES["file"]["type"]);
+$image_id = $_FILES["file"]["name"];
+
+if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/jpg") 
+|| ($type == "image/pjpeg") || ($type == "image/x-png") || ($type == "image/png")) 
 && ($_FILES["file"]["size"] < 20000) && in_array($extension, $allowedExts)) {
 	if ($_FILES["file"]["error"] > 0) {
 		echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
@@ -48,16 +50,16 @@ if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "im
 		if (file_exists("bundle_images/" . $_FILES["file"]["name"])) {
 			echo $_FILES["file"]["name"] . " already exists. ";
 		} else {
-			move_uploaded_file($_FILES["file"]["tmp_name"], "bundle_images/" . $_FILES["file"]["name"]);
-			echo "Stored in: " . "bundle_images/" . $_FILES["file"]["name"];
+			move_uploaded_file($_FILES["file"]["tmp_name"], "bundle_images/" . $image_id);
+			echo "Stored in: " . "bundle_images/" . $image_id;
 		}
 	}
 } else {
-	echo "<script>window.alert(Invalid Format)</script>";
-	header('Location: closet.php');	
+	
+	header('Location: upload.php');	
 }
 
-$image_id = $_FILES["file"]["name"];
+
 
 pg_query("INSERT INTO bundle (gender,age_range,image_id,poster_id)
 					   VALUES('$gender','$age','$image_id','$poster_id')") or die('Error: ' . pg_last_error());
