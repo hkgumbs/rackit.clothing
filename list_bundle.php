@@ -45,6 +45,10 @@ if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "im
 	echo "Invalid file";
 }
 
+
+$image_id = $_FILES["file"]["name"];
+
+
 pg_query("INSERT INTO bundle (gender,age_range,image_id)
 					   VALUES('$gender','$age','$temp')") or die('Error: ' . pg_last_error());
 

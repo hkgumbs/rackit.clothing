@@ -16,6 +16,13 @@ $city = $_POST['input_city'];
 $state = $_POST['input_state'];
 $zip = $_POST['input_zip'];
 
+
+if ($pLength >= 6 && $pLength <= 16) {
+	$errorMessage = "";
+} else {
+	$errorMessage = $errorMessage . "Password must be between 6 and 16 characters" . "<BR>";
+}
+
 /*
  $sendgrid = new SendGrid('davidlim14', 'doublehappiness14');
  $email    = new SendGrid\Email();
@@ -28,11 +35,6 @@ $zip = $_POST['input_zip'];
 
 
 
-if ($pLength >= 6 && $pLength <= 16) {
-	$errorMessage = "";
-} else {
-	$errorMessage = $errorMessage . "Password must be between 6 and 16 characters" . "<BR>";
-}
 
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
