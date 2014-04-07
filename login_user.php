@@ -13,7 +13,7 @@ if (!$_POST['submit']) {
 	header('Location: login.php');
 } else {
 	
-	$result = pg_query("SELECT password FROM person WHERE email = '$email'");
+	$result = pg_query("SELECT * FROM person WHERE email = '$email'");
 	$myperson = pg_fetch_assoc($result);
 
 	if (!$result) {
@@ -27,6 +27,7 @@ if (!$_POST['submit']) {
 		
 		session_start();
 		$_SESSION['login'] = "1";
+		$_SESSION['user_id'] = $myperson['user_id'];
 		header('Location: closet.php');
 	}
 

@@ -1,13 +1,21 @@
 <?php
-include_once ("upload.html");
 
+session_start();
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+	header("Location: login.php");
+}
+
+include_once ("upload.html");
 include "includes/connection.php";
+
+$poster_id = $_SESSION['user_id'];
 
 $selected_radio = $_POST['gender'];
 $age = $_POST['input_age'];
 
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
+	echo "<script>window.alert(please fill out form)</script>";
 	header('Location: upload.html');
 }
 
@@ -25,7 +33,9 @@ if ($selected_radio == 'male') {
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
-if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]["type"] == "image/pjpeg") || ($_FILES["file"]["type"] == "image/x-png") || ($_FILES["file"]["type"] == "image/png")) && ($_FILES["file"]["size"] < 20000) && in_array($extension, $allowedExts)) {
+if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/jpg") 
+|| ($_FILES["file"]["type"] == "image/pjpeg") || ($_FILES["file"]["type"] == "image/x-png") || ($_FILES["file"]["type"] == "image/png")) 
+&& ($_FILES["file"]["size"] < 20000) && in_array($extension, $allowedExts)) {
 	if ($_FILES["file"]["error"] > 0) {
 		echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
 	} else {
@@ -42,15 +52,14 @@ if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "im
 		}
 	}
 } else {
-	echo "Invalid file";
+	echo "<script>window.alert(Invalid Format)</script>";
+	header('Location: closet.php');	
 }
-
 
 $image_id = $_FILES["file"]["name"];
 
-
-pg_query("INSERT INTO bundle (gender,age_range,image_id)
-					   VALUES('$gender','$age','$image_id')") or die('Error: ' . pg_last_error());
+pg_query("INSERT INTO bundle (gender,age_range,image_id,poster_id)
+					   VALUES('$gender','$age','$image_id','$poster_id')") or die('Error: ' . pg_last_error());
 
 header('Location: closet.php');
 ?>
