@@ -34,7 +34,7 @@ $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
 $type = strtolower($_FILES["file"]["type"]);
-$image_id = $_FILES["file"]["name"];
+$image_id = md5($poster_id . $_FILES["file"]["name"]);
 
 if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/jpg") 
 || ($type == "image/pjpeg") || ($type == "image/x-png") || ($type == "image/png")) 
