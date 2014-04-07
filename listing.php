@@ -5,9 +5,9 @@ include "includes/connection.php";
 
 $person_id = $_SESSION['my_id'];
 
-$id = $_GET['id'];
+$bundle_id = $_GET['id'];
 
-$result = pg_query("SELECT * FROM bundle WHERE bundle_id = '$id'");
+$result = pg_query("SELECT * FROM bundle WHERE bundle_id = '$bundle_id'");
 
 $mybundle = pg_fetch_assoc($result);
 
@@ -22,7 +22,7 @@ echo '<h2 class="distance">2.4 miles away</h2>';
 echo '<h3 class="time">6 minutes</h3>';
 echo '</div>';
 echo '<div class="button_container">';
-echo ' <a class="button" id="rackit" >RackIt</a>';
+echo ' <a class="button" id="rackit" href="rackit.php?id='.$bundle_id.'" id="'.$bundle_id.'">RackIt</a>';
 echo '</div>';
 echo '<p>2 others have Racked it.</p>';
 echo '</div>';

@@ -9,7 +9,6 @@ include_once ("closet.html");
 
 include "includes/connection.php";
 
-$user_id = $_SESSION['my_id'];
 
 $query = "SELECT * FROM bundle";
 
