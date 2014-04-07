@@ -34,8 +34,6 @@ if ($pLength >= 6 && $pLength <= 16) {
  $sendgrid->send($email);*/
 
 
-
-
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
 	header('Location: signup.php');
@@ -47,9 +45,13 @@ if (!$_POST['submit']) {
 					VALUES ('$email', '$password', '$street_address', '$city', '$state', '$zip')") or die('Error: ' . pg_last_error());
 
 	echo "person has been added!";
+	
+	$result = pg_query("SELECT * FROM person WHERE email = '$email'");
+	$myperson = pg_fetch_assoc($result);
 
 	session_start();
 	$_SESSION['login'] = "1";
+	$_SESSION['user_id'] = $myperson['user_id'];
 	header('Location: help.html');
 }
 ?>
