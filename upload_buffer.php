@@ -6,6 +6,6 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 }
 
 
-include_once ("uplaod.html");
+include_once ("upload.html");
 
 ?>
