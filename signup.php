@@ -3,7 +3,7 @@ include_once ("signup.html");
 
 include "includes/connection.php";
 
-$query = "SELECT * FROM User";
+$query = "SELECT * FROM person";
 
 $result = pg_query($query);
 if (!$result) {

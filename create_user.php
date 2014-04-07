@@ -6,7 +6,7 @@ include "include/sendgrid-php/sendgrid-php.php";
 /* Make all emails lowercase so they compare alright */
 /* eg DAVID@gmail.com should = david@gmail.com */
 $email = strtolower($_POST['input_new_email']);
-/* $user_name = $_POST['input_name_first']; */
+/* $person_name = $_POST['input_name_first']; */
 $password = trim(md5($_POST['input_password']));
 $password_confirm = trim(md5($_POST['input_password_confirm']));
 $street_address = $_POST['input_street_address'];
@@ -35,7 +35,7 @@ if (!$_POST['submit']) {
 	pg_query("INSERT INTO person (email, password, address_street, address_city, address_state, address_zipcode)
 					VALUES ('$email', '$password', '$street_address', '$city', '$state', '$zip')") or die ('Error: ' . pg_last_error());
 					
-	echo "user has been added!";
+	echo "person has been added!";
 	header('Location: help.html');
 }
 ?>

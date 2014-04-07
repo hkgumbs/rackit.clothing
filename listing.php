@@ -3,7 +3,7 @@ include_once ("listing.html");
 
 include "includes/connection.php";
 
-$user_id = $_SESSION['my_id'];
+$person_id = $_SESSION['my_id'];
 
 $id = $_GET['id'];
 
