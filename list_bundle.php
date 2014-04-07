@@ -15,10 +15,11 @@ $age = $_POST['input_age'];
 
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
-	echo "<script>window.alert(please fill out form)</script>";
 	header('Location: upload.html');
 }
 
+
+	echo "<script>window.alert(please fill out form)</script>";
 /* do some age checking here and make mens womens boys girls accordingly */
 if ($selected_radio == 'male') {
 
