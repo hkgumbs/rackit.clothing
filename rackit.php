@@ -6,7 +6,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 }
 include "includes/connection.php";
 
-$person_id = $_SESSION['my_id'];
+$person_id = $_SESSION['user_id'];
 
 $bundle_id = $_GET['id'];
 
