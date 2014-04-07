@@ -11,7 +11,8 @@ include "includes/connection.php";
 $poster_id = $_SESSION['user_id'];
 
 $selected_radio = $_POST['gender'];
-$age_string = str_replace(' ', '',$_POST['input_age']);
+$age_string = str_replace(" ", "",$_POST['input_age']);
+$ages = explode("-", $age_string);
 
 
 
