@@ -30,7 +30,11 @@ while ($row = pg_fetch_assoc($result)) {
 	$to_echo .= '<div class="thumb_container">';
 	$to_echo .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$to_echo .= "<div>";
-	$to_echo .= '<p class="item_description">' . $row['gender'] . ', Age ' . $row['age_range'] . '</p>';
+	if($row['age_max'] == null){
+		$to_echo .= '<p class="item_description">' . $row['gender'] . ', Age ' . $row['age_min'] . '</p>';
+	} else{
+		$to_echo .= '<p class="item_description">' . $row['gender'] . ', Ages ' . $row['age_min'] .  $row['age_max'] . '</p>';
+	}	
 	$to_echo .= "</div>";
 	$to_echo .= "</div>";
 	$to_echo .= "</a>";

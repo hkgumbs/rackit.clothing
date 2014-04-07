@@ -11,7 +11,9 @@ include "includes/connection.php";
 $poster_id = $_SESSION['user_id'];
 
 $selected_radio = $_POST['gender'];
-$age = $_POST['input_age'];
+$age_string = str_replace(' ', '',$_POST['input_age']);
+
+
 
 if (!$_POST['submit']) {
 	echo "please fill out all of the form";
@@ -68,8 +70,17 @@ if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/jpg")
 
 
 
-pg_query("INSERT INTO bundle (gender,age_range,image_id,poster_id)
-					   VALUES('$gender','$age','$image_id','$poster_id')") or die('Error: ' . pg_last_error());
+$ages = explode("-", $age_string);
+if($ages[1] != null){
+	pg_query("INSERT INTO bundle (gender,age_min,age_max,image_id,poster_id)
+					   VALUES('$gender','$age[0]','$age[1]','$image_id','$poster_id')") or die('Error: ' . pg_last_error());
+} else{
+	pg_query("INSERT INTO bundle (gender,age_min,image_id,poster_id)
+					   VALUES('$gender','$age[0]','$image_id','$poster_id')") or die('Error: ' . pg_last_error());
+}
+
+
+
 
 header('Location: closet.php');
 ?>
