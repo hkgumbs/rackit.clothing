@@ -33,7 +33,7 @@ while ($row = pg_fetch_assoc($result)) {
 	if($row['age_max'] == null){
 		$to_echo .= '<p class="item_description">' . $row['gender'] . ', Age ' . $row['age_min'] . '</p>';
 	} else{
-		$to_echo .= '<p class="item_description">' . $row['gender'] . ', Ages ' . $row['age_min'] .  $row['age_max'] . '</p>';
+		$to_echo .= '<p class="item_description">' . $row['gender'] . ', Ages ' . $row['age_min'] . '-' . $row['age_max'] . '</p>';
 	}	
 	$to_echo .= "</div>";
 	$to_echo .= "</div>";
