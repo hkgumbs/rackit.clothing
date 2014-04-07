@@ -31,14 +31,21 @@ if ($selected_radio == 'male') {
 }
 
 $allowedExts = array("gif", "jpeg", "jpg", "png");
+$file_size - 40000;
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
 $type = strtolower($_FILES["file"]["type"]);
 $image_id = md5($poster_id . $_FILES["file"]["name"]);
 
+if($_FILES["file"]["size"] > $file_size){
+	echo "File size too big";
+	header('Location: upload.php');	
+}
+
+/******* File upload size is 20kb ********/
 if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/jpg") 
 || ($type == "image/pjpeg") || ($type == "image/x-png") || ($type == "image/png")) 
-&& ($_FILES["file"]["size"] < 20000) && in_array($extension, $allowedExts)) {
+&& ($_FILES["file"]["size"] < $file_size) && in_array($extension, $allowedExts)) {
 	if ($_FILES["file"]["error"] > 0) {
 		echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
 	} else {
