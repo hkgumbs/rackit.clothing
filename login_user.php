@@ -20,15 +20,13 @@ if (!$_POST['submit']) {
 		echo "E-mail not found" . $query . "<br/>";
 		header('Location: login.php');
 	} else if ($password != trim($myperson['password'])) {
-		echo $myperson['password'];
-		echo "Incorrect Password" . $query . "<br/>";
-		echo '<td>' . pg_fetch_row($result) . '</td>';
+		session_start();
+		$_SESSION['login'] = "";
 		header('Location: login.php');
 	} else {
-		///On page 1
-		$_login['my_id'] = $myperson['person_id'];
 		
-		echo "All GOOD!!" . $query . "<br/>";
+		session_start();
+		$_SESSION['login'] = "1";
 		header('Location: closet.php');
 	}
 
