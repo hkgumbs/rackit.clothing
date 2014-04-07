@@ -2,10 +2,10 @@
 
 include "includes/connection.php";
 
-$email = strtolower($_POST['input_email']);
+$email = strtolower(htmlspecialchars($_POST['input_email']));
 echo $email;
 /* $person_name = $_POST['input_name_first']; */
-$password = trim(md5($_POST['input_password']));
+$password = trim(md5(htmlspecialchars($_POST['input_password'])));
 echo $password . "<br/>";
 
 if (!$_POST['submit']) {
