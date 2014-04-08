@@ -50,7 +50,7 @@ while ($row = pg_fetch_assoc($result)) {
 	if($row['age_max'] == null){
 		$to_echo .= ', Age ' . $row['age_min'] . '</p>';
 	} else{
-		', Ages ' . $row['age_min'] . '-' . $row['age_max'] . '</p>';
+		$to_echo .= ', Ages ' . $row['age_min'] . '-' . $row['age_max'] . '</p>';
 	}	
 	
 	$to_echo .= "</div>";
