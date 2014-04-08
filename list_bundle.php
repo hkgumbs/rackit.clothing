@@ -72,12 +72,10 @@ if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/jpg")
 
 
 $ages = explode("-", $age_string);
-echo "ages".$ages[0];
-echo "ages two" . $ages[1];
 
 if($ages[1] != null){
 	pg_query("INSERT INTO bundle (gender,age_min,age_max,image_id,poster_id)
-					   VALUES('$gender',$age[0],$age[1],'$image_id','$poster_id')") or die('Error: ' . pg_last_error());
+					   VALUES('$gender',$ages[0],$ages[1],'$image_id','$poster_id')") or die('Error: ' . pg_last_error());
 } else{
 	pg_query("INSERT INTO bundle (gender,age_min,image_id,poster_id)
 					   VALUES('$gender',$age[0],'$image_id','$poster_id')") or die('Error: ' . pg_last_error());
