@@ -16,10 +16,9 @@ $ages = explode("-", $age_string);
 
 if ($selected_radio == 'male') {
 	$query = "SELECT * FROM bundle WHERE gender = 'M'";
-} else{
+} else {
 	$query = "SELECT * FROM bundle WHERE gender = 'F'";
 }
-
 
 $result = pg_query($query);
 if (!$result) {
@@ -33,7 +32,24 @@ echo '<div class="item_grid" id="mydiv">';
 $to_echo = '';
 
 while ($row = pg_fetch_assoc($result)) {
-	if($row['age_min']>$ages[0] || ($ages[1]!=null && $row['age_min']>$ages[1]) || ($ages[1]==null && $row['age_min']>$ages[0]) || ($ages[1] != null && $row['age_max'] != null && $row['age_max']>$ages[1])){
+
+	/* No requested or stored max */
+	/* Requested min should equal stored min */
+	if ($row['age_max'] == null && $ages[1] == null && $ages[0] != $row['age_min']) {
+		continue;
+	}
+	/* Stored max not null but no requested max */
+	/* Requested min should be in between the two */
+	else if ($ages[1] == null && ($ages[0] < $row['age_min'] || $ages[0] > $row['age_max'])) {
+		continue;
+	}
+	/* Requested max but no stored max */
+	/* Stored min should be inbetween requested min and requested max */
+	else if ($row['age_max'] == null && ($row['age_min'] < $ages[0] || $row['age_min'] > $ages[1])) {
+		continue;
+	}
+	/* Requested max and stored max */
+	else if ($ages[1] < $row['age_min'] || $ages[0] > $row['age_max']) {
 		continue;
 	}
 
