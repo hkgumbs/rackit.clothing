@@ -33,7 +33,7 @@ echo '<div class="item_grid" id="mydiv">';
 $to_echo = '';
 
 while ($row = pg_fetch_assoc($result)) {
-	if($row['age_min']<$ages[0] || ($ages[1]!=null && $row['age_min']>$ages[1]) || ($ages[1] != null && $row['age_max'] != null && $row['age_max']>$ages[1])){
+	if($row['age_min']<$ages[0] || ($ages[1]!=null && $row['age_min']>$ages[1]) || ($ages[1]==null && $row['age_min']>$ages[0]) || ($ages[1] != null && $row['age_max'] != null && $row['age_max']>$ages[1])){
 		continue;
 	}
 
