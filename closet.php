@@ -30,11 +30,29 @@ while ($row = pg_fetch_assoc($result)) {
 	$to_echo .= '<div class="thumb_container">';
 	$to_echo .= '<img class="thumb" src="./bundle_images/' . $row['image_id'] . '" alt="image could not be loaded :(">';
 	$to_echo .= "<div>";
-	if($row['age_max'] == null){
-		$to_echo .= '<p class="item_description">' . $row['gender'] . ', Age ' . $row['age_min'] . '</p>';
+	
+	/** Gender **/
+	$to_echo .= '<p class="item_description">';
+	if($row['age_min'] < 8){
+		if($row['gender'] == 'M'){
+			$to_echo .= 'Boys';
+		} else {
+			$to_echo .= 'Girls';
+		}
 	} else{
-		$to_echo .= '<p class="item_description">' . $row['gender'] . ', Ages ' . $row['age_min'] . '-' . $row['age_max'] . '</p>';
+		if($row['gender'] == 'M'){
+			$to_echo .= 'Mens';
+		} else {
+			$to_echo .= 'Womens';
+		}
+	}
+	/** Age **/
+	if($row['age_max'] == null){
+		$to_echo .= ', Age ' . $row['age_min'] . '</p>';
+	} else{
+		', Ages ' . $row['age_min'] . '-' . $row['age_max'] . '</p>';
 	}	
+	
 	$to_echo .= "</div>";
 	$to_echo .= "</div>";
 	$to_echo .= "</a>";
