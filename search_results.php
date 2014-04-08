@@ -15,9 +15,9 @@ $age_string = str_replace(" ", "", $_POST['input_age']);
 $ages = explode("-", $age_string);
 
 if ($selected_radio == 'male') {
-	$query = "SELECT * FROM bundle WHERE gender == 'M'";
+	$query = "SELECT * FROM bundle WHERE gender = 'M'";
 } else{
-	$query = "SELECT * FROM bundle WHERE gender == 'F'";
+	$query = "SELECT * FROM bundle WHERE gender = 'F'";
 }
 
 
