@@ -72,8 +72,8 @@ if ((($type == "image/gif") || ($type == "image/jpeg") || ($type == "image/jpg")
 
 
 $ages = explode("-", $age_string);
-echo $ages[0];
-echo $ages[1];
+echo "ages".$ages[0];
+echo "ages two" . $ages[1];
 
 if($ages[1] != null){
 	pg_query("INSERT INTO bundle (gender,age_min,age_max,image_id,poster_id)
