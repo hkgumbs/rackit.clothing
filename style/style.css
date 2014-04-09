@@ -76,7 +76,7 @@ input#login, input#signup, input#search, input#list, {
 	background-color: #E49407;
 }
 
-#signup, #logout {
+#signup, #logout, #directions {
 	background-color: #0FBA8E;
 }
 
