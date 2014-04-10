@@ -15,14 +15,13 @@ $bundle_id = $_GET['id'];
 
 
 /** Gettting User Address **/
-$person_result = pg_query("SELECT * FROM person WHERE person_id = '$user_id'");
+$person_result = pg_query("SELECT * FROM person WHERE user_id = '$user_id'");
 if (!$person_result) {
 	echo "Problem with query " . $query . "<br/>";
 	echo pg_last_error();
 	exit();
 }
 $myperson = pg_fetch_assoc($person_result);
-pg_cancel_query($person_result);
 /**$person_address = $myperson['address_street'] . ' ' . $myperson['address_city'] . ' ' . $myperson['address_state'] . ' ' . $myperson['address_zipcode']; **/
 
 /** Getting Bundle Info (Including Poster ID **/
