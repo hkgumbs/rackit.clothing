@@ -56,7 +56,7 @@ echo '<h2 class="distance">2.4 miles away</h2>';
 echo '<h3 class="time">6 minutes</h3>';
 echo '</div>';
 echo '<div class="button_container">';
-echo ' <a class="button" id="rackit" href="rackit.php?id='.$bundle_id.'" id="'.$bundle_id.'">RackIt</a>';
+echo ' <a class="button" id="rackit" id="'.$bundle_id.'">Racked!</a>';
 
 echo '<form action="http://maps.google.com/maps" method="get" target="_blank">';
 echo '<input type="hidden" name="saddr" value="'.$person_address.'" />';
