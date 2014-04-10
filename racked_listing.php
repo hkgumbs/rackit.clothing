@@ -32,7 +32,7 @@ if (!$result) {
 }
 $mybundle = pg_fetch_assoc($result);
 
-/** Getting Poster Address **/
+/** Getting Poster Address 
 $poster_id = $mybundle['poster_id'];
 $poster_result = pg_query("SELECT * FROM person WHERE user_id = '$poster_id'");
 if (!$poster_result) {
@@ -41,7 +41,7 @@ if (!$poster_result) {
 	exit();
 }
 $myposter = pg_fetch_assoc($poster_result);
-$poster_address = $myposter['address_street'] . ' ' . $myposter['address_city'] . ' ' . $myposter['address_state'] . ' ' . $myposter['address_zipcode'];
+$poster_address = $myposter['address_street'] . ' ' . $myposter['address_city'] . ' ' . $myposter['address_state'] . ' ' . $myposter['address_zipcode']; **/
 
 /** Echoing everything **/
 echo '<div class="modal">';
