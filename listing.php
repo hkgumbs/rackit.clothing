@@ -1,13 +1,37 @@
 <?php
+
+session_start();
+if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+	header ("Location: login.php");
+}
+
 include_once ("listing.html");
 
 include "includes/connection.php";
 
-$person_id = $_SESSION['my_id'];
+$person_id = $_SESSION['user_id'];
 
 $bundle_id = $_GET['id'];
 
+$racked_count = 0;
+
+$num_result = pg_query("SELECT * FROM person_bundle WHERE bundle_id = '$bundle_id'");
+if (!$num_result) {
+	echo "Problem with query " . $query . "<br/>";
+	echo pg_last_error();
+	exit();
+}
+
+while ($row = pg_fetch_assoc($num_result)){
+	$racked_count++;
+}
+
 $result = pg_query("SELECT * FROM bundle WHERE bundle_id = '$bundle_id'");
+if (!$result) {
+	echo "Problem with query " . $query . "<br/>";
+	echo pg_last_error();
+	exit();
+}
 
 $mybundle = pg_fetch_assoc($result);
 
@@ -24,7 +48,7 @@ echo '</div>';
 echo '<div class="button_container">';
 echo ' <a class="button" id="rackit" href="rackit.php?id='.$bundle_id.'" id="'.$bundle_id.'">RackIt</a>';
 echo '</div>';
-echo '<p>2 others have Racked it.</p>';
+echo '<p>'.$racked_count.' others have Racked it.</p>';
 echo '</div>';
 echo '</div>';
 
