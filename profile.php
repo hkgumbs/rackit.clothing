@@ -9,7 +9,7 @@ include_once ("profile.html");
 
 include "includes/connection.php";
 
-$user_id = $_SESSION['my_id'];
+$user_id = $_SESSION['user_id'];
 
 /***** Displaying Posted *****/
 
