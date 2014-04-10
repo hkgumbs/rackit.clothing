@@ -21,6 +21,6 @@ pg_query("DELETE FROM person_bundle WHERE bundle_id = '$bundle_id' AND racker_id
 
 
 /** Should change to rackings page **/
-header('Location: racked_listing.php?id='.$bundle_id.'');
+header('Location: listing.php?id='.$bundle_id.'');
 
 ?>
