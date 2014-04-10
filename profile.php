@@ -68,7 +68,7 @@ echo '</div> ';
 
 /***** Displaying Racked *****/
 
-$query = "SELECT * FROM person_bundle WHERE person_id = '$user_id'";
+$query = "SELECT * FROM person_bundle WHERE racker_id = '$user_id'";
 
 $result = pg_query($query);
 if (!$result) {
@@ -82,13 +82,13 @@ echo '<h1>Listed</h1>';
 
 $to_echo = '';
 
-while ($bundle = pg_fetch_assoc($result)) {
+while ($person_bundle_row = pg_fetch_assoc($result)) {
 
-	$curr_bundle_id = $bundle['bundle_id'];
+	$curr_bundle_id = $person_bundle_row['bundle_id'];
 	$bundle_query = "SELECT * FROM bundle WHERE bundle_id = '$curr_bundle_id'";
 
 	$bundle_result = pg_query($query);
-	if (!$result) {
+	if (!$bundle_result) {
 		echo "Problem with query " . $query . "<br/>";
 		echo pg_last_error();
 		exit();
