@@ -41,7 +41,33 @@ $mybundle = pg_fetch_assoc($result);
 
 echo '<div class="modal">';
 echo '<div class= "modal_container">';
-echo '<h1 class="modal_title">' . $mybundle['gender']. ', Age ' . $mybundle['age_range'] . '</h1>';
+
+/** Description **/
+$to_echo = '';
+/** Gender **/
+	$to_echo .= '<h1 class="modal_title">';
+	if($mybundle['age_min'] < 8){
+		if($mybundle['gender'] == 'M'){
+			$to_echo .= 'Boys';
+		} else {
+			$to_echo .= 'Girls';
+		}
+	} else{
+		if($mybundle['gender'] == 'M'){
+			$to_echo .= 'Mens';
+		} else {
+			$to_echo .= 'Womens';
+		}
+	}
+	/** Age **/
+	if($mybundle['age_max'] == null){
+		$to_echo .= ', Age ' . $mybundle['age_min'] . '</h1>';
+	} else{
+		$to_echo .= ', Ages ' . $mybundle['age_min'] . '-' . $mybundle['age_max'] . '</h1>';
+	}	
+
+echo $to_echo;
+
 echo '<div class="full_container">';
 echo '<img class="full" src="./bundle_images/' . $mybundle['image_id'] . '" alt="image could not be loaded :(">';
 echo '</div>';
