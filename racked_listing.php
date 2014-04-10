@@ -22,7 +22,7 @@ if (!$person_result) {
 	exit();
 }
 $myperson = pg_fetch_assoc($person_result);
-/**$person_address = $myperson['address_street'] . ' ' . $myperson['address_city'] . ' ' . $myperson['address_state'] . ' ' . $myperson['address_zipcode']; **/
+$person_address = $myperson['address_street'] . ' ' . $myperson['address_city'] . ' ' . $myperson['address_state'] . ' ' . $myperson['address_zipcode'];
 
 /** Getting Bundle Info (Including Poster ID **/
 $result = pg_query("SELECT * FROM bundle WHERE bundle_id = '$bundle_id'");
@@ -33,7 +33,7 @@ if (!$result) {
 }
 $mybundle = pg_fetch_assoc($result);
 
-/** Getting Poster Address 
+/** Getting Poster Address **/
 $poster_id = $mybundle['poster_id'];
 $poster_result = pg_query("SELECT * FROM person WHERE user_id = '$poster_id'");
 if (!$poster_result) {
@@ -42,7 +42,7 @@ if (!$poster_result) {
 	exit();
 }
 $myposter = pg_fetch_assoc($poster_result);
-$poster_address = $myposter['address_street'] . ' ' . $myposter['address_city'] . ' ' . $myposter['address_state'] . ' ' . $myposter['address_zipcode']; **/
+$poster_address = $myposter['address_street'] . ' ' . $myposter['address_city'] . ' ' . $myposter['address_state'] . ' ' . $myposter['address_zipcode']; 
 
 /** Echoing everything **/
 echo '<div class="modal">';
