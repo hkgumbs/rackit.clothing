@@ -23,6 +23,6 @@ pg_query("INSERT INTO person_bundle (bundle_id, racker_id)
 
 
 /** Should change to rackings page **/
-header('Location: racked_listing.php');
+header('Location: racked_listing.php?id='.$bundle_id.'');
 
 ?>
