@@ -22,8 +22,6 @@ if (!$result) {
 	exit();
 }
 
-echo '<div id="content">';
-echo '<div id="left">';
 echo '<div class="item_grid" id="listed_grid">';
 echo '<h1>Listed</h1>';
 
@@ -67,7 +65,6 @@ while ($row = pg_fetch_assoc($result)) {
 echo $to_echo;
 
 echo '</div> ';
-echo '</div> ';
 
 /***** Displaying Racked *****/
 
@@ -80,7 +77,6 @@ if (!$result) {
 	exit();
 }
 
-echo '<div id="right">';
 echo '<div class="item_grid" id="racked_grid">';
 echo '<h1>Racked</h1>';
 
@@ -134,7 +130,5 @@ while ($person_bundle_row = pg_fetch_assoc($result)) {
 }
 echo $to_echo;
 
-echo '</div> ';
-echo '</div> ';
 echo '</div> ';
 ?>
