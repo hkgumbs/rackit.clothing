@@ -77,8 +77,8 @@ if (!$result) {
 	exit();
 }
 
-echo '<div class="item_grid" id="listed_grid">';
-echo '<h1>Listed</h1>';
+echo '<div class="item_grid" id="racked_grid">';
+echo '<h1>Racked</h1>';
 
 $to_echo = '';
 
