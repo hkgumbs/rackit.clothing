@@ -21,8 +21,8 @@ if (!$person_result) {
 	echo pg_last_error();
 	exit();
 }
-$myperson = pg_fetch_assoc($person_result);
-/**$person_address = $myperson['address_street'] . ' ' . $myperson['address_city'] . ' ' . $myperson['address_state'] . ' ' . $myperson['address_zipcode']; **/
+/**$myperson = pg_fetch_assoc($person_result);
+/$person_address = $myperson['address_street'] . ' ' . $myperson['address_city'] . ' ' . $myperson['address_state'] . ' ' . $myperson['address_zipcode']; **/
 
 /** Getting Bundle Info (Including Poster ID **/
 $result = pg_query("SELECT * FROM bundle WHERE bundle_id = '$bundle_id'");
