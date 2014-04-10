@@ -13,9 +13,8 @@ $user_id = $_SESSION['user_id'];
 
 $bundle_id = $_GET['id'];
 
-echo $bundle_id;
 
-/** Gettting User Address **/
+/** Gettting User Address *
 $person_result = pg_query("SELECT * FROM person WHERE person_id = '$user_id'");
 if (!$person_result) {
 	echo "Problem with query " . $query . "<br/>";
@@ -23,7 +22,7 @@ if (!$person_result) {
 	exit();
 }
 $myperson = pg_fetch_assoc($person_result);
-$person_address = $myperson['address_street'] . ' ' . $myperson['address_city'] . ' ' . $myperson['address_state'] . ' ' . $myperson['address_zipcode'];
+$person_address = $myperson['address_street'] . ' ' . $myperson['address_city'] . ' ' . $myperson['address_state'] . ' ' . $myperson['address_zipcode']; **/
 
 /** Getting Bundle Info (Including Poster ID **/
 $result = pg_query("SELECT * FROM bundle WHERE bundle_id = '$bundle_id'");
