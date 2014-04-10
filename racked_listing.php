@@ -57,13 +57,13 @@ echo '<h3 class="time">6 minutes</h3>';
 echo '</div>';
 echo '<div class="button_container">';
 echo ' <a class="button" id="rackit" href="rackit.php?id='.$bundle_id.'" id="'.$bundle_id.'">RackIt</a>';
-/**
+
 echo '<form action="http://maps.google.com/maps" method="get" target="_blank">';
 echo '<input type="hidden" name="saddr" value="'.$person_address.'" />';
 echo '<input type="hidden" name="daddr" value="'.$poster_address.'" />';
 echo '<input class="button" type="submit" id="login" name="submit" value="Get Directions" />	';					
 echo '</form>';
-**/
+
 echo '</div>';
 echo '<p>2 others have Racked it.</p>';
 echo '</div>';
