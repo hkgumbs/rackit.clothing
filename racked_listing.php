@@ -20,29 +20,26 @@ if (!$person_result) {
 	echo pg_last_error();
 	exit();
 }
-
 $myperson = pg_fetch_assoc($person_result);
 $person_address = $myperson['address_street'] . ' ' . $myperson['address_city'] . ' ' . $myperson['address_state'] . ' ' . $myperson['address_zipcode'];
 
-/** Getting Bundle Infor (Including Poster ID **/
+/** Getting Bundle Info (Including Poster ID **/
 $result = pg_query("SELECT * FROM bundle WHERE bundle_id = '$bundle_id'");
 if (!$result) {
 	echo "Problem with query " . $query . "<br/>";
 	echo pg_last_error();
 	exit();
 }
-
 $mybundle = pg_fetch_assoc($result);
 
 /** Getting Poster Address **/
 $poster_id = $mybundle['poster_id'];
-$poster_result = pg_query("SELECT * FROM person WHERE person_id = '$poster_id'");
+$poster_result = pg_query("SELECT * FROM person WHERE user_id = '$poster_id'");
 if (!$poster_result) {
 	echo "Problem with query " . $query . "<br/>";
 	echo pg_last_error();
 	exit();
 }
-
 $myposter = pg_fetch_assoc($poster_result);
 $poster_address = $myposter['address_street'] . ' ' . $myposter['address_city'] . ' ' . $myposter['address_state'] . ' ' . $myposter['address_zipcode'];
 
