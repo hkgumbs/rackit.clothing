@@ -13,6 +13,8 @@ $user_id = $_SESSION['user_id'];
 
 $bundle_id = $_GET['id'];
 
+echo $bundle_id;
+
 /** Gettting User Address **/
 $person_result = pg_query("SELECT * FROM person WHERE person_id = '$user_id'");
 if (!$person_result) {

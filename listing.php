@@ -52,6 +52,7 @@ echo '</div>';
 echo '<div class="button_container">';
 echo ' <a class="button" id="rackit" href="rackit.php?id='.$bundle_id.'" id="'.$bundle_id.'">RackIt</a>';
 echo '</div>';
+/** put count into bundle tbale instead**/
 echo '<p>'.$racked_count.' others have Racked it.</p>';
 echo '</div>';
 echo '</div>';
