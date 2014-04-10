@@ -5,6 +5,7 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 	header ("Location: login.php");
 }
 
+
 include_once ("listing.html");
 
 include "includes/connection.php";
@@ -23,6 +24,9 @@ if (!$num_result) {
 }
 
 while ($row = pg_fetch_assoc($num_result)){
+	if($row['racker_id'] = $person_id){
+		header('Location: racked_listing.php?id='.$bundle_id.'');
+	}	
 	$racked_count++;
 }
 
