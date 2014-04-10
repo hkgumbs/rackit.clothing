@@ -90,6 +90,10 @@ echo '<input type="hidden" name="daddr" value="'.$poster_address.'" />';
 echo '<input class="button" type="submit" id="login" name="submit" value="Get Directions" />	';					
 echo '</form>';
 
+echo '<div class="button_container">';
+echo ' <a class="button" id="rackit" href="unrack.php?id='.$bundle_id.'" id="'.$bundle_id.'">UnRack</a>';
+echo '</div>';
+
 echo '</div>';
 echo '<p>2 others have Racked it.</p>';
 echo '</div>';
