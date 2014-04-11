@@ -81,8 +81,8 @@ echo '<div class="distance_time">';
 echo '<h2 class="distance">You\'ve Racked This Item!</h2>';
 
 echo '<div class="button_container">';
-echo ' <a class="button" id="rackit" href="unrack.php?id='.$bundle_id.'" id="'.$bundle_id.'">UnRack</a>';
 
+echo ' <a class="button" id="rackit" href="unrack.php?id='.$bundle_id.'" id="'.$bundle_id.'">UnRack</a>';
 
 echo '<form action="http://maps.google.com/maps" method="get" target="_blank">';
 echo '<input type="hidden" name="saddr" value="'.$person_address.'" />';
