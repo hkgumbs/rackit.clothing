@@ -82,13 +82,15 @@ echo '<h2 class="distance">You\'ve Racked This Item!</h2>';
 
 echo '<div class="button_container">';
 echo ' <a class="button" id="rackit" href="unrack.php?id='.$bundle_id.'" id="'.$bundle_id.'">UnRack</a>';
-echo '</div>';
+
 
 echo '<form action="http://maps.google.com/maps" method="get" target="_blank">';
 echo '<input type="hidden" name="saddr" value="'.$person_address.'" />';
 echo '<input type="hidden" name="daddr" value="'.$poster_address.'" />';
 echo '<input class="button" type="submit" id="directions" name="submit" value="Get Directions" />	';					
 echo '</form>';
+
+echo '</div>';
 
 echo '</div>';
 echo '<p>2 others have Racked it.</p>';
