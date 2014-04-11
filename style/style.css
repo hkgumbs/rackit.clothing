@@ -60,7 +60,7 @@ a.button {
 	line-height: 72px;
 }
 
-input#login, input#signup, input#search, input#list, {
+input#login, input#signup, input#search, input#list {
 	margin: 5px auto;
 	float: center;
 	width: 445px;
