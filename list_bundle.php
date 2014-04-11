@@ -34,7 +34,7 @@ if ($selected_radio == 'male') {
 }
 
 $allowedExts = array("gif", "jpeg", "jpg", "png");
-$file_size = 40000;
+$file_size = 400000000;
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
 $type = strtolower($_FILES["file"]["type"]);
