@@ -76,7 +76,7 @@ if($ages[1] != null){
 					   VALUES('$gender',$ages[0],$ages[1],'$image_id','$poster_id')") or die('Error: ' . pg_last_error());
 } else{
 	pg_query("INSERT INTO bundle (gender,age_min,image_id,poster_id)
-					   VALUES('$gender',$age[0],'$image_id','$poster_id')") or die('Error: ' . pg_last_error());
+					   VALUES('$gender','$age[0]','$image_id','$poster_id')") or die('Error: ' . pg_last_error());
 }
 
 
