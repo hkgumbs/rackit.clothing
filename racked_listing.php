@@ -87,7 +87,7 @@ echo '</div>';
 echo '<form action="http://maps.google.com/maps" method="get" target="_blank">';
 echo '<input type="hidden" name="saddr" value="'.$person_address.'" />';
 echo '<input type="hidden" name="daddr" value="'.$poster_address.'" />';
-echo '<input class="button" type="submit" id="login" name="submit" value="Get Directions" />	';					
+echo '<input class="button" type="submit" id="directions" name="submit" value="Get Directions" />	';					
 echo '</form>';
 
 echo '</div>';
