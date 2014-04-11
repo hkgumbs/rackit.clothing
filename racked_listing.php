@@ -6,15 +6,28 @@ if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
 }
 
 include_once ("listing.html");
-
 include "includes/connection.php";
 
 $user_id = $_SESSION['user_id'];
-
 $bundle_id = $_GET['id'];
 
+/**************** Getting number of Racks ********************************************/
+$racked_count = 0;
+$num_result = pg_query("SELECT * FROM person_bundle WHERE bundle_id = '$bundle_id'");
+if (!$num_result) {
+	echo "Problem with query " . $query . "<br/>";
+	echo pg_last_error();
+	exit();
+}
 
-/** Gettting User Address **/
+while ($row = pg_fetch_assoc($num_result)){
+	if($row['racker_id'] = $person_id){
+		header('Location: racked_listing.php?id='.$bundle_id.'');
+	}	
+	$racked_count++;
+}
+
+/*********************** Gettting User Address ****************************************/
 $person_result = pg_query("SELECT * FROM person WHERE user_id = '$user_id'");
 if (!$person_result) {
 	echo "Problem with query " . $query . "<br/>";
@@ -33,7 +46,7 @@ if (!$result) {
 }
 $mybundle = pg_fetch_assoc($result);
 
-/** Getting Poster Address **/
+/*********************** Getting Poster Address ****************************************/
 $poster_id = $mybundle['poster_id'];
 $poster_result = pg_query("SELECT * FROM person WHERE user_id = '$poster_id'");
 if (!$poster_result) {
@@ -44,7 +57,7 @@ if (!$poster_result) {
 $myposter = pg_fetch_assoc($poster_result);
 $poster_address = $myposter['address_street'] . ' ' . $myposter['address_city'] . ' ' . $myposter['address_state'] . ' ' . $myposter['address_zipcode']; 
 
-/** Echoing everything **/
+/*********************** Echoing everything ********************************************/
 echo '<div class="modal">';
 echo '<div class= "modal_container">';
 
@@ -93,7 +106,7 @@ echo '</form>';
 echo '</div>';
 
 echo '</div>';
-echo '<p>2 others have Racked it.</p>';
+echo '<p>'.$racked_count.' others have Racked it.</p>';
 echo '</div>';
 echo '</div>';
 

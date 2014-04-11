@@ -43,7 +43,7 @@ a.title:link, a.title:visited, a.title:hover, a.title:active {
 	text-decoration:none;
 }
 
-a.button, #login, #signup, #search, #list {
+a.button, #login, #signup, #search, #list, #directions {
 	text-transform: uppercase;
 	border: #ffffff solid thick;
 	border-radius: 18px;
