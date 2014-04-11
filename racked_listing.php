@@ -78,21 +78,17 @@ echo '<div class="full_container">';
 echo '<img class="full" src="./bundle_images/' . $mybundle['image_id'] . '" alt="image could not be loaded :(">';
 echo '</div>';
 echo '<div class="distance_time">';
-echo '<h2 class="distance">2.4 miles away</h2>';
-echo '<h3 class="time">6 minutes</h3>';
-echo '</div>';
+echo '<h2 class="distance">You\'ve Racked This Item!</h2>';
+
 echo '<div class="button_container">';
-echo ' <a class="button" id="rackit" id="'.$bundle_id.'">Racked!</a>';
+echo ' <a class="button" id="rackit" href="unrack.php?id='.$bundle_id.'" id="'.$bundle_id.'">UnRack</a>';
+echo '</div>';
 
 echo '<form action="http://maps.google.com/maps" method="get" target="_blank">';
 echo '<input type="hidden" name="saddr" value="'.$person_address.'" />';
 echo '<input type="hidden" name="daddr" value="'.$poster_address.'" />';
 echo '<input class="button" type="submit" id="login" name="submit" value="Get Directions" />	';					
 echo '</form>';
-
-echo '<div class="button_container">';
-echo ' <a class="button" id="rackit" href="unrack.php?id='.$bundle_id.'" id="'.$bundle_id.'">UnRack</a>';
-echo '</div>';
 
 echo '</div>';
 echo '<p>2 others have Racked it.</p>';
