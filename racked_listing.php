@@ -26,6 +26,8 @@ while ($row = pg_fetch_assoc($num_result)){
 	}	
 	$racked_count++;
 }
+// Account for your own rack
+$racked_count--;
 
 /*********************** Gettting User Address ****************************************/
 $person_result = pg_query("SELECT * FROM person WHERE user_id = '$user_id'");
